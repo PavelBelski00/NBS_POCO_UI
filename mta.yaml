@@ -54,6 +54,18 @@ modules:
       - nbspocovpuiappmanagelabel.zip
       name: nbspocovpuiappmanagelabel
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagecountry.zip
+      name: nbspocovpuiappmanagecountry
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagettype.zip
+      name: nbspocovpuiappmanagettype
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagestsl1.zip
+      name: nbspocovpuiappmanagestsl1
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -77,6 +89,36 @@ modules:
 - name: nbspocovpuiappmanagelabel
   type: html5
   path: manage.label
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagecountry
+  type: html5
+  path: manage.country
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagettype
+  type: html5
+  path: manage.ttype
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagestsl1
+  type: html5
+  path: manage.stsl1
   build-parameters:
     build-result: dist
     builder: custom
