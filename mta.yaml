@@ -2,82 +2,110 @@ _schema-version: "3.2"
 ID: nbs-poc-ovp-ui-app
 version: 0.0.1
 modules:
-  - name: nbs-poc-ovp-ui-app-destination-content
-    type: com.sap.application.content
-    requires:
-      - name: nbs-poc-ovp-ui-app-destination-service
-        parameters:
-          content-target: true
-      - name: nbs-poc-ovp-ui-app_html_repo_host
-        parameters:
-          service-key:
-            name: nbs-poc-ovp-ui-app_html_repo_host-key
-      - name: uaa_nbs-poc-ovp-ui-app
-        parameters:
-          service-key:
-            name: uaa_nbs-poc-ovp-ui-app-key
-    parameters:
-      content:
-        instance:
-          destinations:
-            - Name: nbspocovpuiapprouter_nbs_poc_ovp_ui_app_html_repo_host
-              ServiceInstanceName: nbs-poc-ovp-ui-app-html5-app-host-service
-              ServiceKeyName: nbs-poc-ovp-ui-app_html_repo_host-key
-              sap.cloud.service: nbspocovpuiapprouter
-            - Authentication: OAuth2UserTokenExchange
-              Name: nbspocovpuiapprouter_uaa_nbs_poc_ovp_ui_app
-              ServiceInstanceName: nbs-poc-ovp-ui-app-xsuaa-service
-              ServiceKeyName: uaa_nbs-poc-ovp-ui-app-key
-              sap.cloud.service: nbspocovpuiapprouter
-          existing_destinations_policy: ignore
-    build-parameters:
-      no-source: true
-  - name: nbs-poc-ovp-ui-app-app-content
-    type: com.sap.application.content
-    path: .
-    requires:
-      - name: nbs-poc-ovp-ui-app_html_repo_host
-        parameters:
-          content-target: true
-    build-parameters:
-      build-result: resources
-      requires:
-        - artifacts:
-            - nbspocovpuiappmanagecapacity.zip
-          name: nbspocovpuiappmanagecapacity
-          target-path: resources/
-  - name: nbspocovpuiappmanagecapacity
-    type: html5
-    path: manage.capacity
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm install
-        - npm run build:cf
-      supported-platforms: []
-resources:
+- name: nbs-poc-ovp-ui-app-destination-content
+  type: com.sap.application.content
+  requires:
   - name: nbs-poc-ovp-ui-app-destination-service
-    type: org.cloudfoundry.managed-service
     parameters:
-      config:
-        HTML5Runtime_enabled: true
-        version: 1.0.0
-      service: destination
-      service-name: nbs-poc-ovp-ui-app-destination-service
-      service-plan: lite
+      content-target: true
   - name: nbs-poc-ovp-ui-app_html_repo_host
-    type: org.cloudfoundry.managed-service
     parameters:
-      service: html5-apps-repo
-      service-name: nbs-poc-ovp-ui-app-html5-app-host-service
-      service-plan: app-host
+      service-key:
+        name: nbs-poc-ovp-ui-app_html_repo_host-key
   - name: uaa_nbs-poc-ovp-ui-app
-    type: org.cloudfoundry.managed-service
     parameters:
-      path: ./xs-security.json
-      service: xsuaa
-      service-name: nbs-poc-ovp-ui-app-xsuaa-service
-      service-plan: application
+      service-key:
+        name: uaa_nbs-poc-ovp-ui-app-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: nbspocovpuiapprouter_nbs_poc_ovp_ui_app_html_repo_host
+          ServiceInstanceName: nbs-poc-ovp-ui-app-html5-app-host-service
+          ServiceKeyName: nbs-poc-ovp-ui-app_html_repo_host-key
+          sap.cloud.service: nbspocovpuiapprouter
+        - Authentication: OAuth2UserTokenExchange
+          Name: nbspocovpuiapprouter_uaa_nbs_poc_ovp_ui_app
+          ServiceInstanceName: nbs-poc-ovp-ui-app-xsuaa-service
+          ServiceKeyName: uaa_nbs-poc-ovp-ui-app-key
+          sap.cloud.service: nbspocovpuiapprouter
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: nbs-poc-ovp-ui-app-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: nbs-poc-ovp-ui-app_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - nbspocovpuiappmanagecapacity.zip
+      name: nbspocovpuiappmanagecapacity
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanageorder.zip
+      name: nbspocovpuiappmanageorder
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagelabel.zip
+      name: nbspocovpuiappmanagelabel
+      target-path: resources/
+- name: nbspocovpuiappmanagecapacity
+  type: html5
+  path: manage.capacity
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanageorder
+  type: html5
+  path: manage.order
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagelabel
+  type: html5
+  path: manage.label
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: nbs-poc-ovp-ui-app-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: nbs-poc-ovp-ui-app-destination-service
+    service-plan: lite
+- name: nbs-poc-ovp-ui-app_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: nbs-poc-ovp-ui-app-html5-app-host-service
+    service-plan: app-host
+- name: uaa_nbs-poc-ovp-ui-app
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: nbs-poc-ovp-ui-app-xsuaa-service
+    service-plan: application
 parameters:
   deploy_mode: html5-repo
