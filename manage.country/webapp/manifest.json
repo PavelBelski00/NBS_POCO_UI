@@ -50,7 +50,7 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-country-inbound": {
                     "signature": {
-                        "parameters": {},
+                        "parameters": { },
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_OVP_COUNTRY",
@@ -58,7 +58,7 @@
                     "title": "{{AppTitle}}",
                     "subTitle": "",
                     "icon": "sap-icon://table-view"
-                }
+                }       
             }
         }
     },

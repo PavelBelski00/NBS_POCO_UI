@@ -78,6 +78,10 @@ modules:
       - nbspocovpuiappmanageplant.zip
       name: nbspocovpuiappmanageplant
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportovporder.zip
+      name: nbspocovpuiappreportovporder
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -161,6 +165,16 @@ modules:
 - name: nbspocovpuiappmanageplant
   type: html5
   path: manage.plant
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportovporder
+  type: html5
+  path: report.ovporder
   build-parameters:
     build-result: dist
     builder: custom
