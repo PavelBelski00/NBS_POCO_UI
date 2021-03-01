@@ -59,7 +59,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": ""
+                    "icon": "sap-icon://table-view",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "count",
+                        "refresh": 10
+                    }
                 }
             }
         }

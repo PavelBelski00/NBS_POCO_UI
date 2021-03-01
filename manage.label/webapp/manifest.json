@@ -59,7 +59,7 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": ""
+                    "icon": "sap-icon://table-view"
                 }
             }
         }
