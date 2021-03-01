@@ -1,10 +1,8 @@
 {
     "_version": "",
-    "sap.cloud": {
-        "service": "nbspocovpuiapprouter"
-    },
+    "sap.cloud": {"service": "nbspocovpuiapprouter"},
     "sap.app": {
-        "id": "nbs.poc.ovp.ui.app.manage.capacity",
+        "id": "nbs.poc.ovp.ui.app.manage.site",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -18,21 +16,21 @@
         "resources": "resources.json",
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/sap/ZPOCO_UI_CAPACITY_O2/",
+                "uri": "/sap/opu/odata/sap/ZPOCO_UI_SITE_O2/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
-                        "ZPOCO_UI_CAPACITY_O2_VAN",
+                        "ZPOCO_UI_SITE_O2_VAN",
                         "annotation"
                     ],
                     "localUri": "localService/metadata.xml"
                 }
             },
-            "ZPOCO_UI_CAPACITY_O2_VAN": {
-                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_CAPACITY_O2_VAN',Version='0001')/$value/",
+            "ZPOCO_UI_SITE_O2_VAN": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_SITE_O2_VAN',Version='0001')/$value/",
                 "type": "ODataAnnotation",
                 "settings": {
-                    "localUri": "localService/ZPOCO_UI_CAPACITY_O2_VAN.xml"
+                    "localUri": "localService/ZPOCO_UI_SITE_O2_VAN.xml"
                 }
             },
             "annotation": {
@@ -50,12 +48,12 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "nbs-poc-ovp-ui-app-manage-capacity-inbound": {
+                "nbs-poc-ovp-ui-app-manage-site-inbound": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "NBS_POC_OVP_CAPACITY",
+                    "semanticObject": "NBS_POC_OVP_SITE",
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
@@ -114,13 +112,13 @@
                 "type": "sap.ui.model.resource.ResourceModel",
                 "uri": "i18n/i18n.properties"
             },
-            "i18n|sap.suite.ui.generic.template.ListReport|Capacity": {
+            "i18n|sap.suite.ui.generic.template.ListReport|OrderingSite": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "i18n/ListReport/Capacity/i18n.properties"
+                "uri": "i18n/ListReport/OrderingSite/i18n.properties"
             },
-            "i18n|sap.suite.ui.generic.template.ObjectPage|Capacity": {
+            "i18n|sap.suite.ui.generic.template.ObjectPage|OrderingSite": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "i18n/ObjectPage/Capacity/i18n.properties"
+                "uri": "i18n/ObjectPage/OrderingSite/i18n.properties"
             },
             "": {
                 "dataSource": "mainService",
@@ -151,8 +149,8 @@
             "showDraftToggle": false
         },
         "pages": {
-            "ListReport|Capacity": {
-                "entitySet": "Capacity",
+            "ListReport|OrderingSite": {
+                "entitySet": "OrderingSite",
                 "component": {
                     "name": "sap.suite.ui.generic.template.ListReport",
                     "list": true,
@@ -168,8 +166,8 @@
                     }
                 },
                 "pages": {
-                    "ObjectPage|Capacity": {
-                        "entitySet": "Capacity",
+                    "ObjectPage|OrderingSite": {
+                        "entitySet": "OrderingSite",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage"

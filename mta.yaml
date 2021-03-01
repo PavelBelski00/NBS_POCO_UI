@@ -66,6 +66,18 @@ modules:
       - nbspocovpuiappmanagestsl1.zip
       name: nbspocovpuiappmanagestsl1
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagestsl2.zip
+      name: nbspocovpuiappmanagestsl2
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagesite.zip
+      name: nbspocovpuiappmanagesite
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanageplant.zip
+      name: nbspocovpuiappmanageplant
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -119,6 +131,36 @@ modules:
 - name: nbspocovpuiappmanagestsl1
   type: html5
   path: manage.stsl1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagestsl2
+  type: html5
+  path: manage.stsl2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagesite
+  type: html5
+  path: manage.site
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanageplant
+  type: html5
+  path: manage.plant
   build-parameters:
     build-result: dist
     builder: custom
