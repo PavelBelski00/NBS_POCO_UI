@@ -133,14 +133,13 @@
         "enableLiveFilter": true,
         "considerAnalyticalParameters": false,
         "cards": {
-
             "orders_card": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L1",
                     "subTitle": "STSL1",
-                    "entitySet": "STSL1_Card",
+                    "entitySet": "CardStatusL1",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#STSL1"
@@ -152,7 +151,7 @@
                 "settings": {
                     "title": "Status L2",
                     "subTitle": "STSL2",
-                    "entitySet": "STSL2_Card",
+                    "entitySet": "CardStatusL2",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#STSL2"
@@ -164,13 +163,52 @@
                 "settings": {
                     "title": "Therapy",
                     "subTitle": "Therapy",
-                    "entitySet": "Therapy_Card",
+                    "entitySet": "CardTherapy",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Therapy"
                 }
-            }            
-
+            },
+            "order_card_4": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Therapy By Plant",
+                    "entitySet": "CardTherapyPlantTable",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant"
+                }
+            },
+            "orders_card_5": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Maximum Quantity of Therapy",
+                    "subTitle": "",
+                    "entitySet": "CardTherapyPlantMax",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#MaxQuantity"
+                }
+            },
+            "orders_card_6": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.list",
+                "settings": {
+                    "title": "Therapies By Date",
+                    "entitySet": "CardTherapyDateMax",
+                    "listType": "extended",
+                    "listFlavor": "bar",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                }
+            }
         }
+    },
+    "sap.ui.generic.app": {
+        "settings": {}
     }
 }
