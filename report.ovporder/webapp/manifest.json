@@ -132,6 +132,45 @@
         "containerLayout": "resizable",
         "enableLiveFilter": true,
         "considerAnalyticalParameters": false,
-        "cards": {}
+        "cards": {
+
+            "orders_card": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Status L1",
+                    "subTitle": "STSL1",
+                    "entitySet": "STSL1_Card",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#STSL1"
+                }
+            },
+            "orders_card_2": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Status L2",
+                    "subTitle": "STSL2",
+                    "entitySet": "STSL2_Card",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#STSL2"
+                }
+            },
+            "orders_card_3": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Therapy",
+                    "subTitle": "Therapy",
+                    "entitySet": "Therapy_Card",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Therapy"
+                }
+            }            
+
+        }
     }
 }
