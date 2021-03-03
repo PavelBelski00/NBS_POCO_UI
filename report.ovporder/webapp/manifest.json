@@ -138,7 +138,7 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L1",
-                    "subTitle": "Quantity by Status L2",
+                    "subTitle": " ",
                     "entitySet": "CardStatusL1",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -150,7 +150,7 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L2",
-                    "subTitle": "Quantity by Status L2",
+                    "subTitle": " ",
                     "entitySet": "CardStatusL2",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -162,7 +162,7 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Therapy",
-                    "subTitle": "Therapy",
+                    "subTitle": " ",
                     "entitySet": "CardTherapy",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
