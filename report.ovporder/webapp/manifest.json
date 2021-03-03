@@ -132,14 +132,13 @@
         "containerLayout": "resizable",
         "enableLiveFilter": true,
         "considerAnalyticalParameters": false,
-        "cards": {
-
+       "cards": {
             "orders_card": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L1",
-                    "subTitle": "STSL1",
+                    "subTitle": " ",
                     "entitySet": "CardStatusL1",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -151,7 +150,7 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L2",
-                    "subTitle": "STSL2",
+                    "subTitle": " ",
                     "entitySet": "CardStatusL2",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -163,7 +162,7 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Therapy",
-                    "subTitle": "Therapy",
+                    "subTitle": " ",
                     "entitySet": "CardTherapy",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -200,11 +199,12 @@
                 "settings": {
                     "title": "Therapies By Date",
                     "entitySet": "CardTherapyDateMax",
-                    "listType": "extended",
                     "listFlavor": "bar",
+                    "listType": "extended",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+                    "defaultSpan":"auto"
                 }
             },
             "orders_card_7": {
@@ -217,7 +217,7 @@
                     "listFlavor": "standard",
                     "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
                 }
-            },            
+            },
            "slots_plants_aggregated": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
@@ -255,8 +255,7 @@
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Plants"
                     }
-                }            
-
+                }
+            }
         }
-    }
 }
