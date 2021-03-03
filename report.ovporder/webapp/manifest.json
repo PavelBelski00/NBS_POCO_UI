@@ -207,6 +207,17 @@
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
                 }
             },
+            "orders_card_7": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.linklist",
+                "settings": {
+                    "title": "Plant List",
+                    "entitySet": "CardPlantList",
+                    "listType": "extended",
+                    "listFlavor": "standard",
+                    "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
+                }
+            },            
            "slots_plants_aggregated": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
