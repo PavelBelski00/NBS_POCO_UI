@@ -206,7 +206,45 @@
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
                 }
-            }
+            },
+           "slots_plants_aggregated": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Consumed Slots",
+                    "subTitle": "Aggregation by plants",
+                    "entitySet": "Slots_plants",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Slots"
+                }
+            },
+            "slots_dates_aggregated": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Consumed Slots",
+                    "subTitle": "Aggregation by dates",
+                    "entitySet": "Slots_dates",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Slots"
+                }
+            }, 
+                            
+            "plants_aggregated": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Plants",
+                    "subTitle": "Aggregation by plants",
+                    "listType": "extended",
+                    "entitySet": "Plants",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Plants"
+                    }
+                }            
 
         }
     }
