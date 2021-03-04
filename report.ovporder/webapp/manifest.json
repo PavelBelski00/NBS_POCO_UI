@@ -1,6 +1,8 @@
 {
     "_version": "",
-    "sap.cloud": {"service": "nbspocovpuiapprouter"},
+    "sap.cloud": {
+        "service": "nbspocovpuiapprouter"
+    },
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.report.ovporder",
         "type": "application",
@@ -135,7 +137,8 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Status L1",
+                    "title": "Level 1 Order Status",
+                    "subTitle": "Number of Orders per Level 1 Status",
                     "entitySet": "CardStatusL1Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -146,7 +149,8 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Status L2",
+                    "title": "Level 2 Order Status",
+                    "subTitle": "Number of Orders per Level 2 Status",
                     "entitySet": "CardStatusL2Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -157,7 +161,8 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Therapy",
+                    "title": "Order - Therapies",
+                    "subTitle": "Number of Orders per Therapy",
                     "entitySet": "CardTherapyQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -199,7 +204,7 @@
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
-                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TherapyQuantitySum" 
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TherapyQuantitySum"
                 }
             },
             "CardPlant": {
@@ -213,7 +218,7 @@
                     "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
                 }
             },
-           "CardCapacitySlotsPlantSum": {
+            "CardCapacitySlotsPlantSum": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
@@ -236,8 +241,7 @@
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsDate"
                 }
-            }, 
-                            
+            },
             "CardCapacityPlantQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
@@ -249,8 +253,11 @@
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartPlantQuantity"
-                    }
                 }
             }
+        }
+    },
+    "sap.ui.generic.app": {
+        "settings": {}
     }
 }

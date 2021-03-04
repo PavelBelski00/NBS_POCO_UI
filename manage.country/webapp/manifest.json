@@ -45,21 +45,6 @@
         "sourceTemplate": {
             "id": "ui5template.smartTemplate",
             "version": "1.40.12"
-        },
-        "crossNavigation": {
-            "inbounds": {
-                "nbs-poc-ovp-ui-app-manage-country-inbound": {
-                    "signature": {
-                        "parameters": { },
-                        "additionalParameters": "allowed"
-                    },
-                    "semanticObject": "NBS_POC_OVP_COUNTRY",
-                    "action": "manage",
-                    "title": "{{AppTitle}}",
-                    "subTitle": "",
-                    "icon": "sap-icon://table-view"
-                }       
-            }
         }
     },
     "sap.ui": {
