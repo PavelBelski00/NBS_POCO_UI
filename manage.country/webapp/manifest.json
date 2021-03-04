@@ -58,7 +58,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://table-view"
+                    "icon": "sap-icon://globe",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_COUNTRY_O2/Country/$count",
+                        "refresh": 10
+                    }
                 }       
             }
         }

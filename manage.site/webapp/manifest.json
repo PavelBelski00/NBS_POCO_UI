@@ -57,7 +57,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://table-view"
+                    "icon": "sap-icon://internet-browser",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_SITE_O2/OrderingSite/$count",
+                        "refresh": 10
+                    }
                 }
             }
         }

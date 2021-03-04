@@ -57,7 +57,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://table-view"
+                    "icon": "sap-icon://step",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_STSL1_O2/StatusL1/$count",
+                        "refresh": 10
+                    }
                 }
             }
         }
