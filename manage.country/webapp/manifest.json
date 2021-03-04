@@ -52,7 +52,7 @@
                 "nbs-poc-ovp-ui-app-manage-country-inbound": {
                     "signature": {
                         "parameters": { },
-                        "additionalParameters": "allowed"
+                        "additionalParameters": "notallowed"
                     },
                     "semanticObject": "NBS_POC_OVP_COUNTRY",
                     "action": "manage",
