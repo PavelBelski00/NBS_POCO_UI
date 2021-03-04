@@ -200,18 +200,18 @@
                     "entitySet": "CardTherapyL1L2",
                     "showFilterInHeader": true,
                     "tabs": [
-                                {"value": "L1"
-                                    ""
+                                {"value": "L1",
+                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL1",
+                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                                 },
-
-
-                    ]
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                                 {"value": "L2",
+                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL2",
+                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                                }
+                            ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
-                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart",
-                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#MaxQuantity"
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
             },
             "CardTherapyDateSum": {
