@@ -57,7 +57,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": ""
+                    "icon": "",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "/sap/opu/odata/sap/ZPOCO_UI_COUNTRY_O2/Country/$count",
+                        "refresh": 1
+                    }
                 }
             }
         }
