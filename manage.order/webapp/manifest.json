@@ -60,7 +60,7 @@
                     "icon": "",
                     "indicatorDataSource": {
                         "dataSource": "mainService",
-                        "path": "/sap/opu/odata/sap/ZPOCO_UI_COUNTRY_O2/PocoOrder/$count",
+                        "path": "/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/PocoOrder/$count",
                         "refresh": 1
                     }
                 }

@@ -192,6 +192,28 @@
                     "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#MaxQuantity"
                 }
             },
+                "CardTherapyL1L2": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Maximum for a sample of Therapies",
+                    "entitySet": "CardTherapyL1L2",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                                {"value": "L1"
+                                    ""
+                                },
+
+
+                    ]
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#MaxQuantity"
+                }
+            },
             "CardTherapyDateSum": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.list",
