@@ -138,7 +138,6 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Level 1 Order Status",
-                    "subTitle": "Number of Orders per Level 1 Status",
                     "entitySet": "CardStatusL1Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -150,7 +149,6 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Level 2 Order Status",
-                    "subTitle": "Number of Orders per Level 2 Status",
                     "entitySet": "CardStatusL2Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -162,7 +160,6 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Order - Therapies",
-                    "subTitle": "Number of Orders per Therapy",
                     "entitySet": "CardTherapyQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -184,11 +181,13 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Maximum Quantity of Therapy",
-                    "subTitle": "",
+                    "title": "Maximum for a sample of Therapies",
                     "entitySet": "CardTherapyMaxQuantity",
+                    "showFilterInHeader": true,
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart",
                     "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#MaxQuantity"
                 }
@@ -204,7 +203,7 @@
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
-                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TherapyQuantitySum"
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TherapyQuantityMax"
                 }
             },
             "CardPlant": {
@@ -222,8 +221,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Consumed Slots",
-                    "subTitle": "Aggregation by plants",
+                    "title": "Plant Capacity",
                     "entitySet": "CardCapacitySlotsPlantSum",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -234,8 +232,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Consumed Slots",
-                    "subTitle": "Aggregation by dates",
+                    "title": "Capacity Data",
                     "entitySet": "CardCapacitySlotsDateSum",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -247,12 +244,35 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Plants",
-                    "subTitle": "Aggregation by plants",
                     "listType": "extended",
                     "entitySet": "CardCapacityPlantQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartPlantQuantity"
+                }
+            },
+            "CardAlert": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Alerts",
+                    "entitySet": "CardAlert",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                }
+            },
+            "CardAlertWorkItem": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Work Items",
+                    "entitySet": "CardAlertWorkItem",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
                 }
             }
         }

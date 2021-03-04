@@ -82,6 +82,14 @@ modules:
       - nbspocovpuiappreportovporder.zip
       name: nbspocovpuiappreportovporder
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagealert.zip
+      name: nbspocovpuiappmanagealert
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanagealertwi.zip
+      name: nbspocovpuiappmanagealertwi
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -175,6 +183,26 @@ modules:
 - name: nbspocovpuiappreportovporder
   type: html5
   path: report.ovporder
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagealert
+  type: html5
+  path: manage.alert
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanagealertwi
+  type: html5
+  path: manage.alertwi
   build-parameters:
     build-result: dist
     builder: custom

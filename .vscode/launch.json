@@ -548,6 +548,128 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
       }
+    },
+    {
+      "name": "Start manage.alert",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.alert",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.alert\"}"
+      }
+    },
+    {
+      "name": "Start manage.alert Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.alert",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.alert\"}"
+      }
+    },
+    {
+      "name": "Start manage.alert Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.alert",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.alert\"}"
+      }
+    },
+    {
+      "name": "Start manage.alertwi",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.alertwi",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.alertwi\"}"
+      }
+    },
+    {
+      "name": "Start manage.alertwi Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.alertwi",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.alertwi\"}"
+      }
+    },
+    {
+      "name": "Start manage.alertwi Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.alertwi",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.alertwi\"}"
+      }
     }
   ],
   "compounds": [],
