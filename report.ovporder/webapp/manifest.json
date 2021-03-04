@@ -138,6 +138,8 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Level 1 Order Status",
+                    "sortBy": "StatusL1Name",
+                    "sortOrder": "ascending",
                     "entitySet": "CardStatusL1Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -149,6 +151,8 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Level 2 Order Status",
+                    "sortBy": "StatusL2Name",
+                    "sortOrder": "ascending",
                     "entitySet": "CardStatusL2Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -197,6 +201,8 @@
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Maximum for a sample of Therapies",
+                    "sortBy": "Therapy",
+                    "sortOrder": "ascending",
                     "entitySet": "CardTherapyL1L2",
                     "showFilterInHeader": true,
                     "tabs": [

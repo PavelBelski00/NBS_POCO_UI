@@ -60,7 +60,7 @@
                     "icon": "",
                     "indicatorDataSource": {
                         "dataSource": "mainService",
-                        "path": "/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/PocoOrder/$count",
+                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/PocoOrder/$count",
                         "refresh": 1
                     }
                 }
