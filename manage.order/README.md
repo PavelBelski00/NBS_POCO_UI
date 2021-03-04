@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Mar 01 2021 09:36:02 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Thu Mar 04 2021 06:01:42 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori|
 |**App Generator Version**<br>1.1.3|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -14,7 +14,7 @@
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>Latest|
 |**Enable Telemetry**<br>True|
-|**Main Entity**<br>Poco_Order|
+|**Main Entity**<br>PocoOrder|
 |**Navigation Entity**<br>None|
 
 ## manage.order

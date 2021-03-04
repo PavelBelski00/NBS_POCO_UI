@@ -8,8 +8,8 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
-    <edmx:Reference Uri="/sap/opu/odata/sap/ZPOCO_UI_ORDER_CHART_O2/$metadata">
-        <edmx:Include Namespace="cds_zpoco_ui_order_chart"/>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZPOCO_UI_ORDER_OVP_O2/$metadata">
+        <edmx:Include Namespace="cds_zpoco_ui_order_ovp"/>
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="nbs.poc.ovp.ui.app">

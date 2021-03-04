@@ -1,8 +1,6 @@
 {
     "_version": "",
-    "sap.cloud": {
-        "service": "nbspocovpuiapprouter"
-    },
+    "sap.cloud": {"service": "nbspocovpuiapprouter"},
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.report.ovporder",
         "type": "application",
@@ -17,22 +15,22 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/sap/ZPOCO_UI_ORDER_CHART_O2/",
+                "uri": "/sap/opu/odata/sap/ZPOCO_UI_ORDER_OVP_O2/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
-                        "ZPOCO_UI_ORDER_CHART_O2_VAN",
+                        "ZPOCO_UI_ORDER_OVP_O2_VAN",
                         "annotation"
                     ],
                     "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
             },
-            "ZPOCO_UI_ORDER_CHART_O2_VAN": {
-                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_ORDER_CHART_O2_VAN',Version='0001')/$value/",
+            "ZPOCO_UI_ORDER_OVP_O2_VAN": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_ORDER_OVP_O2_VAN',Version='0001')/$value/",
                 "type": "ODataAnnotation",
                 "settings": {
-                    "localUri": "localService/ZPOCO_UI_ORDER_CHART_O2_VAN.xml"
+                    "localUri": "localService/ZPOCO_UI_ORDER_OVP_O2_VAN.xml"
                 }
             },
             "annotation": {
@@ -59,7 +57,7 @@
                     "action": "report",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://Chart-Tree-Map"
+                    "icon": ""
                 }
             }
         }
@@ -128,137 +126,131 @@
     },
     "sap.ovp": {
         "globalFilterModel": "mainService",
-        "globalFilterEntityType": "zpoco_c_order_chartType",
+        "globalFilterEntityType": "PocoOrderType",
         "containerLayout": "resizable",
         "enableLiveFilter": true,
         "considerAnalyticalParameters": false,
         "cards": {
-            "orders_card": {
+            "CardStatusL1Quantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L1",
-                    "subTitle": " ",
-                    "entitySet": "CardStatusL1",
+                    "entitySet": "CardStatusL1Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#STSL1"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartStatusL1Quantity"
                 }
             },
-            "orders_card_2": {
+            "CardStatusL2Quantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Status L2",
-                    "subTitle": " ",
-                    "entitySet": "CardStatusL2",
+                    "entitySet": "CardStatusL2Quantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#STSL2"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartStatusL2Quantity"
                 }
             },
-            "orders_card_3": {
+            "CardTherapyQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Therapy",
-                    "subTitle": " ",
-                    "entitySet": "CardTherapy",
+                    "entitySet": "CardTherapyQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Therapy"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartTherapyQuantity"
                 }
             },
-            "order_card_4": {
+            "CardTherapyDateQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.table",
                 "settings": {
                     "title": "Therapy By Plant",
-                    "entitySet": "CardTherapyPlantTable",
+                    "entitySet": "CardTherapyDateQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant"
                 }
             },
-            "orders_card_5": {
+            "CardTherapyMaxQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Maximum Quantity of Therapy",
                     "subTitle": "",
-                    "entitySet": "CardTherapyPlantMax",
+                    "entitySet": "CardTherapyMaxQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart",
                     "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#MaxQuantity"
                 }
             },
-            "orders_card_6": {
+            "CardTherapyDateSum": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.list",
                 "settings": {
                     "title": "Therapies By Date",
-                    "entitySet": "CardTherapyDateMax",
+                    "entitySet": "CardTherapyDateSum",
                     "listFlavor": "bar",
                     "listType": "extended",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
-                    "defaultSpan":"auto"
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TherapyQuantitySum" 
                 }
             },
-            "orders_card_7": {
+            "CardPlant": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.linklist",
                 "settings": {
                     "title": "Plant List",
-                    "entitySet": "CardPlantList",
+                    "entitySet": "CardPlant",
                     "listType": "extended",
                     "listFlavor": "standard",
                     "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
                 }
             },
-           "slots_plants_aggregated": {
+           "CardCapacitySlotsPlantSum": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Consumed Slots",
                     "subTitle": "Aggregation by plants",
-                    "entitySet": "Slots_plants",
+                    "entitySet": "CardCapacitySlotsPlantSum",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Slots"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsPlant"
                 }
             },
-            "slots_dates_aggregated": {
+            "CardCapacitySlotsDateSum": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Consumed Slots",
                     "subTitle": "Aggregation by dates",
-                    "entitySet": "Slots_dates",
+                    "entitySet": "CardCapacitySlotsDateSum",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Slots"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsDate"
                 }
             }, 
                             
-            "plants_aggregated": {
+            "CardCapacityPlantQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Plants",
                     "subTitle": "Aggregation by plants",
                     "listType": "extended",
-                    "entitySet": "Plants",
+                    "entitySet": "CardCapacityPlantQuantity",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Plants"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartPlantQuantity"
                     }
                 }
             }
-        },
-    "sap.ui.generic.app": {
-        "settings": {}
     }
 }

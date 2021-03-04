@@ -26,10 +26,10 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema Namespace="zpoco_ui_order_o2_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-            <Annotations Target="cds_zpoco_ui_order.Poco_OrderType/OrderUuid">
+            <Annotations Target="cds_zpoco_ui_order.PocoOrderType/OrderUuid">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
-            <Annotations Target="cds_zpoco_ui_order.Poco_OrderType">
+            <Annotations Target="cds_zpoco_ui_order.PocoOrderType">
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.CollectionFacet">
@@ -215,14 +215,12 @@
                             <PropertyValue Property="Value" Path="CountryId"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
-                        <Record Type="UI.DataFieldWithNavigationPath">
+                        <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="MfgPlantId"/>
-                            <PropertyValue Property="Target" NavigationPropertyPath="to_Plant"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
-                        <Record Type="UI.DataFieldWithNavigationPath">
+                        <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="TherapyTypeId"/>
-                            <PropertyValue Property="Target" NavigationPropertyPath="to_TType"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                         <Record Type="UI.DataField">
