@@ -65,15 +65,6 @@
                         "refresh": 10
                     }
                 }       
-            },
-            "nbs-poc-ovp-ui-app-display-country-inbound": {
-                "signature": {
-                    "parameters": { "name": "CountryId" },
-                    "additionalParameters": "notallowed"
-                },
-                "semanticObject": "NBS_POC_OVP_COUNTRY",
-                "action" : "display",
-                "title": "{{AppTitle}}"
             }
         }
     },
