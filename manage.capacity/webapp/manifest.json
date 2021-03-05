@@ -59,7 +59,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://table-view"
+                    "icon": "sap-icon://table-view",
+                    "indicatorDataSource": {
+                    "dataSource": "mainService",
+                    "path": "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_Capacity_O2/Capacity/$count",
+                    "refresh": 10
+                    }  
                 }
             }
         }

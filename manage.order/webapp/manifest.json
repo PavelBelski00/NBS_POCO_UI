@@ -59,7 +59,7 @@
                     "icon": "sap-icon://sales-order",
                     "indicatorDataSource": {
                     "dataSource": "mainService",
-                    "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/PocoOrder/$count",
+                    "path": "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/PocoOrder/$count",
                     "refresh": 10
                     }
                 }
