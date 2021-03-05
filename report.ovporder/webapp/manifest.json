@@ -132,6 +132,7 @@
         "containerLayout": "resizable",
         "enableLiveFilter": true,
         "considerAnalyticalParameters": false,
+        "useDateRangeType": true,
         "cards": {
             "CardAveilableSlots": {
                 "model": "mainService",
@@ -141,19 +142,22 @@
                     "entitySet": "CardAveilableSlots",
                     "showFilterInHeader": true,
                     "tabs": [
-                                {"value": "1st Decade",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec1",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                },
-                                {"value": "2nd Decade",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec2",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                },
-                                {"value": "3rd Decade",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec3",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                }
-                            ],
+                        {
+                            "value": "1st Decade",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec1",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "2nd Decade",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec2",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "3rd Decade",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec3",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
@@ -207,7 +211,7 @@
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartTherapyClCom"
                 }
             },
-             "CardTherapyQuantity": {
+            "CardTherapyQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
@@ -254,15 +258,17 @@
                     "entitySet": "CardTherapyL1L2",
                     "showFilterInHeader": true,
                     "tabs": [
-                                {"value": "L1 Status",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL1",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                },
-                                 {"value": "L2 Status",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL2",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                }
-                            ],
+                        {
+                            "value": "L1 Status",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL1",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "L2 Status",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL2",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"

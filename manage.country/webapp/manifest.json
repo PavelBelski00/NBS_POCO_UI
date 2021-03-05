@@ -176,7 +176,10 @@
                         "entitySet": "Country",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage"
+                            "name": "sap.suite.ui.generic.template.ObjectPage",
+                            "settings": {
+                                "allowDeepLinking": true
+                            }
                         }
                     }
                 }
