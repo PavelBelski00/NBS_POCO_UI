@@ -56,7 +56,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": ""
+                    "icon": "sap-icon://sales-order",
+                    "indicatorDataSource": {
+                    "dataSource": "mainService",
+                    "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/PocoOrder/$count",
+                    "refresh": 10
+                    }
                 }
             }
         }

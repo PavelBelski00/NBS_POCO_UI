@@ -326,7 +326,19 @@
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
                 }
+            },
+            "CardOOSDescription": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Description",
+                    "entitySet": "CardOOSDescription",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#ChartOosDescription",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartOosDescription"
+                }
             }
+
         }
     },
     "sap.cloud": {
