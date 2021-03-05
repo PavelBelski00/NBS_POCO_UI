@@ -60,7 +60,7 @@
                     "icon": "sap-icon://activity-items",
                     "indicatorDataSource": {
                     "dataSource": "mainService",
-                    "path": "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_SITE_O2/OrderingSite/$count",
+                    "path" : "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_SITE_O2/OrderingSite/$count",
                     "refresh": 10
                     }  
                 }
