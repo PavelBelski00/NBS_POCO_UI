@@ -1,20 +1,20 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Mar 01 2021 09:36:02 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Fri Mar 05 2021 06:58:06 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori|
-|**App Generator Version**<br>1.1.3|
+|**App Generator Version**<br>1.1.4|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Floorplan Used**<br>List Report Object Page V2|
 |**Service Type**<br>SAP System (ABAP Environment on SAP Business Technology Platform)|
-|**Service URL**<br>https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/
+|**Service URL**<br>https://58b2bb15-cd51-4d4d-9242-0e0a211415c3.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ORDER_O2/
 |**Module Name**<br>manage.order|
 |**Application Title**<br>Manage Order|
 |**Namespace**<br>nbs.poc.ovp.ui.app|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>Latest|
 |**Enable Telemetry**<br>True|
-|**Main Entity**<br>Poco_Order|
+|**Main Entity**<br>PocoOrder|
 |**Navigation Entity**<br>None|
 
 ## manage.order

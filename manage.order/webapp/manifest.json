@@ -1,8 +1,5 @@
 {
     "_version": "",
-    "sap.cloud": {
-        "service": "nbspocovpuiapprouter"
-    },
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.manage.order",
         "type": "application",
@@ -59,7 +56,7 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://table-view"
+                    "icon": ""
                 }
             }
         }
@@ -114,13 +111,13 @@
                 "type": "sap.ui.model.resource.ResourceModel",
                 "uri": "i18n/i18n.properties"
             },
-            "i18n|sap.suite.ui.generic.template.ListReport|Poco_Order": {
+            "i18n|sap.suite.ui.generic.template.ListReport|PocoOrder": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "i18n/ListReport/Poco_Order/i18n.properties"
+                "uri": "i18n/ListReport/PocoOrder/i18n.properties"
             },
-            "i18n|sap.suite.ui.generic.template.ObjectPage|Poco_Order": {
+            "i18n|sap.suite.ui.generic.template.ObjectPage|PocoOrder": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "i18n/ObjectPage/Poco_Order/i18n.properties"
+                "uri": "i18n/ObjectPage/PocoOrder/i18n.properties"
             },
             "": {
                 "dataSource": "mainService",
@@ -151,8 +148,8 @@
             "showDraftToggle": false
         },
         "pages": {
-            "ListReport|Poco_Order": {
-                "entitySet": "Poco_Order",
+            "ListReport|PocoOrder": {
+                "entitySet": "PocoOrder",
                 "component": {
                     "name": "sap.suite.ui.generic.template.ListReport",
                     "list": true,
@@ -168,8 +165,8 @@
                     }
                 },
                 "pages": {
-                    "ObjectPage|Poco_Order": {
-                        "entitySet": "Poco_Order",
+                    "ObjectPage|PocoOrder": {
+                        "entitySet": "PocoOrder",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage"
@@ -188,5 +185,9 @@
     },
     "sap.platform.hcp": {
         "uri": ""
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "nbspocovpuiapprouter"
     }
 }
