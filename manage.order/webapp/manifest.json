@@ -64,6 +64,12 @@
                         "refresh": 10
                     }
                 }
+            },
+            "outbounds": {
+				"country": {
+					"semanticObject": "NBS_POC_OVP_COUNTRY",
+					"action": "manage"
+                }
             }
         }
     },
