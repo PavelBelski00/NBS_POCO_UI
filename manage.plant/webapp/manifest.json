@@ -51,7 +51,7 @@
                 "nbs-poc-ovp-ui-app-manage-plant-inbound": {
                     "signature": {
                         "parameters": { "MfgPlantId": { } },
-                        "additionalParameters": "ignored"
+                        "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_OVP_PLANT",
                     "action": "manage",
