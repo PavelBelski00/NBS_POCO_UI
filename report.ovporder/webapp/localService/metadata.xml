@@ -29,6 +29,60 @@
     </edmx:Reference>
     <edmx:DataServices m:DataServiceVersion="2.0">
         <Schema Namespace="cds_zpoco_ui_order_ovp" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="CardAlertType" sap:label="Card: Alert List" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AlertUuid"/>
+                </Key>
+                <Property Name="AlertUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="NvsId" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="NVS ID"/>
+                <Property Name="AlertMessage" Type="Edm.String" MaxLength="150" sap:label="Alert Message"/>
+                <Property Name="UpdatedDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Updated Date"/>
+            </EntityType>
+            <EntityType Name="CardAlertWorkItemType" sap:label="Card: Alert Work Item List" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AlertWorkItemUuid"/>
+                </Key>
+                <Property Name="AlertWorkItemUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="NvsId" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="NVS ID"/>
+                <Property Name="AlertMessage" Type="Edm.String" MaxLength="150" sap:label="Alert Message"/>
+                <Property Name="UpdatedDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Updated Date"/>
+            </EntityType>
+            <EntityType Name="CardAveilableSlotsType" sap:label="Available slots by dates" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PlantID"/>
+                </Key>
+                <Property Name="PlantID" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName" sap:label="Plant ID"/>
+                <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
+                <Property Name="decade_1st" Type="Edm.Byte" sap:label="1st Decade"/>
+                <Property Name="decade_2nd" Type="Edm.Byte" sap:label="2nt Decade"/>
+                <Property Name="decade_3rd" Type="Edm.Byte" sap:label="3rd Decade"/>
+                <NavigationProperty Name="to_Plant" Relationship="cds_zpoco_ui_order_ovp.assoc_9139C118A7115DDEA87FAF4A578E0A30" FromRole="FromRole_assoc_9139C118A7115DDEA87FAF4A578E0A30" ToRole="ToRole_assoc_9139C118A7115DDEA87FAF4A578E0A30"/>
+            </EntityType>
+            <EntityType Name="CardTherapyMaxQuantityType" sap:semantics="aggregate" sap:label="Card: Max Quantity Order-Therapy-Plant" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MfgPlantId" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:text="PlantName" sap:label="Plant ID"/>
+                <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
+                <Property Name="MaxQuantity" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/>
+                <Property Name="TherapySum" Type="Edm.Int32" sap:aggregation-role="dimension"/>
+            </EntityType>
+            <EntityType Name="CardOOSDescriptionType" sap:label="OOS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Description"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="OOS Description"/>
+                <Property Name="OrdersOosDescription" Type="Edm.Int32" sap:label="Oos Description"/>
+            </EntityType>
+            <EntityType Name="CardOOSType" sap:label="Card: OOS Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OosDetailsID"/>
+                </Key>
+                <Property Name="OosDetailsID" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="OosDetails" sap:label="OOS ID"/>
+                <Property Name="OosDetails" Type="Edm.String" MaxLength="30" sap:label="OOS Descr"/>
+                <Property Name="QuanOfCases" Type="Edm.Int32"/>
+            </EntityType>
             <EntityType Name="CardCapacityPlantQuantityType" sap:label="Card: Quantity Capacity-Plant" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="MfgPlantId"/>
@@ -69,20 +123,36 @@
                 <Key>
                     <PropertyRef Name="Therapy"/>
                 </Key>
-                <Property Name="Therapy" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Therapy"/>
+                <Property Name="Therapy" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Therapy" sap:value-list="standard"/>
                 <Property Name="MfgPlantId" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName" sap:label="Plant ID"/>
                 <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
                 <Property Name="Day0" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Day 0"/>
                 <Property Name="Therapy_Quantity" Type="Edm.Int32"/>
                 <NavigationProperty Name="to_Plant" Relationship="cds_zpoco_ui_order_ovp.assoc_41F5376CB15C74ED5717FB61411EA9E1" FromRole="FromRole_assoc_41F5376CB15C74ED5717FB61411EA9E1" ToRole="ToRole_assoc_41F5376CB15C74ED5717FB61411EA9E1"/>
             </EntityType>
-            <EntityType Name="CardTherapyDateSumType" sap:label="Card: Sum Quantity Order-Therapy-Date" sap:content-version="1">
+            <EntityType Name="CardTherapyL1L2Type" sap:semantics="aggregate" sap:label="Therapy aggregation by L1 &amp; L2 staus" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="Therapy"/>
+                    <PropertyRef Name="ID"/>
                 </Key>
-                <Property Name="Therapy" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Therapy"/>
-                <Property Name="ByDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Day 0"/>
-                <Property Name="TherapyQuantitySum" Type="Edm.Int32"/>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Therapy" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Therapy"/>
+                <Property Name="StatusL1Id" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Status L1 ID"/>
+                <Property Name="L1" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Status L1 Name"/>
+                <Property Name="StatusL2Id" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Status L2 ID"/>
+                <Property Name="L2" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Status L2 Name"/>
+                <Property Name="SumTherapyQuantity" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/>
+                <NavigationProperty Name="to_StatusL1" Relationship="cds_zpoco_ui_order_ovp.assoc_D8707C7094E23A21B13A2F4D0070183B" FromRole="FromRole_assoc_D8707C7094E23A21B13A2F4D0070183B" ToRole="ToRole_assoc_D8707C7094E23A21B13A2F4D0070183B"/>
+                <NavigationProperty Name="to_StatusL2" Relationship="cds_zpoco_ui_order_ovp.assoc_29348F47C99EA4C9E686CAC63A25175A" FromRole="FromRole_assoc_29348F47C99EA4C9E686CAC63A25175A" ToRole="ToRole_assoc_29348F47C99EA4C9E686CAC63A25175A"/>
+            </EntityType>
+            <EntityType Name="CardTherapyDateSumType" sap:semantics="aggregate" sap:label="Card: Sum Quantity Order-Therapy-Date" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TherapyName" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Therapy" sap:value-list="standard"/>
+                <Property Name="ByDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Day 0"/>
+                <Property Name="TherapyQuantityMax" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/>
+                <Property Name="ThQuantity" Type="Edm.Int32" sap:aggregation-role="dimension"/>
             </EntityType>
             <EntityType Name="CardCapacitySlotsDateSumType" sap:semantics="aggregate" sap:label="Card: Sum Capacity-Slots-Date" sap:content-version="1">
                 <Key>
@@ -90,17 +160,28 @@
                 </Key>
                 <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="MfgStartDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Planned Manufacturing Start Date"/>
-                <Property Name="Agreed" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
-                <Property Name="Rejected" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
+                <Property Name="Consumed" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
+                <Property Name="Available" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
             </EntityType>
             <EntityType Name="CardCapacitySlotsPlantSumType" sap:semantics="aggregate" sap:label="Card: Sum Capacity-Slots-Plant" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="ID"/>
                 </Key>
                 <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="MfgPlantId" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Plant ID"/>
-                <Property Name="Agreed" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
-                <Property Name="Rejected" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
+                <Property Name="MfgPlantId" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:text="PlantName" sap:label="Plant ID"/>
+                <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
+                <Property Name="Consumed" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
+                <Property Name="Available" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
+                <NavigationProperty Name="to_Plant" Relationship="cds_zpoco_ui_order_ovp.assoc_E8D7CD79C2C051601942698D6B70D539" FromRole="FromRole_assoc_E8D7CD79C2C051601942698D6B70D539" ToRole="ToRole_assoc_E8D7CD79C2C051601942698D6B70D539"/>
+            </EntityType>
+            <EntityType Name="CardTherapyClComType" sap:semantics="aggregate" sap:label="Clinical and commercial Therapies" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Therapy" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="Therapy"/>
+                <Property Name="TherapyTypeId" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Therapy Type ID"/>
+                <Property Name="QuanTherapyType" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/>
             </EntityType>
             <EntityType Name="PocoOrderType" sap:label="Order" sap:content-version="1">
                 <Key>
@@ -115,13 +196,16 @@
                 <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="TherapyTypeId" Type="Edm.String" MaxLength="10" sap:text="TherapyTypeName" sap:label="Therapy Type ID" sap:value-list="standard"/>
                 <Property Name="TherapyTypeName" Type="Edm.String" MaxLength="10" sap:label="Therapy Type Name" sap:creatable="false" sap:updatable="false"/>
-                <Property Name="Day0" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Day 0"/>
+                <Property Name="OrderCreatedDay" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Order Created Day"/>
+                <Property Name="Day0" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Day 0"/>
                 <Property Name="StatusL1Id" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="StatusL1Name" sap:label="Status L1 ID" sap:value-list="standard"/>
                 <Property Name="StatusL1Name" Type="Edm.String" MaxLength="30" sap:label="Status L1 Name" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="StatusL2Id" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="StatusL2Name" sap:label="Status L2 ID" sap:value-list="standard"/>
                 <Property Name="StatusL2Name" Type="Edm.String" MaxLength="30" sap:label="Status L2 Name" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="OrderingSiteId" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="OrderingSiteName" sap:label="Ordering Site ID" sap:value-list="standard"/>
                 <Property Name="OrderingSiteName" Type="Edm.String" MaxLength="50" sap:label="Ordering Site Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="OosDetailsID" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="OosDetails" sap:label="OOS ID" sap:value-list="standard"/>
+                <Property Name="OosDetails" Type="Edm.String" MaxLength="30" sap:label="OOS Descr" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="Oos" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="OOS"/>
                 <Property Name="OosDescription" Type="Edm.String" MaxLength="30" sap:label="OOS Description"/>
                 <Property Name="AphDewar" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="APH Dewar"/>
@@ -150,6 +234,22 @@
                 <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
             </EntityType>
+            <EntityType Name="CardSteckSetType" sap:label="Stack card for orders" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NvsId"/>
+                </Key>
+                <Property Name="NvsId" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="NVS ID"/>
+                <Property Name="Therapy" Type="Edm.String" MaxLength="50" sap:label="Therapy"/>
+                <Property Name="TherapyTypeId" Type="Edm.String" MaxLength="10" sap:label="Therapy Type ID"/>
+                <Property Name="OrderCreatedDay" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Order Created Day"/>
+                <Property Name="StatusL1Id" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Status L1 ID"/>
+                <Property Name="StatusL2Id" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Status L2 ID"/>
+                <Property Name="OrderingSiteId" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Ordering Site ID"/>
+                <NavigationProperty Name="to_Site" Relationship="cds_zpoco_ui_order_ovp.assoc_EFC1A4102C672BDB45F7F6DF3FF56F66" FromRole="FromRole_assoc_EFC1A4102C672BDB45F7F6DF3FF56F66" ToRole="ToRole_assoc_EFC1A4102C672BDB45F7F6DF3FF56F66"/>
+                <NavigationProperty Name="to_StatusL1" Relationship="cds_zpoco_ui_order_ovp.assoc_8904B609C16ABF2802ACE31FC6A16E8A" FromRole="FromRole_assoc_8904B609C16ABF2802ACE31FC6A16E8A" ToRole="ToRole_assoc_8904B609C16ABF2802ACE31FC6A16E8A"/>
+                <NavigationProperty Name="to_StatusL2" Relationship="cds_zpoco_ui_order_ovp.assoc_5F85DE0FD4BA0449B96B75C637074432" FromRole="FromRole_assoc_5F85DE0FD4BA0449B96B75C637074432" ToRole="ToRole_assoc_5F85DE0FD4BA0449B96B75C637074432"/>
+                <NavigationProperty Name="to_TType" Relationship="cds_zpoco_ui_order_ovp.assoc_02ACD8AF45B9AF932C12CB775522763C" FromRole="FromRole_assoc_02ACD8AF45B9AF932C12CB775522763C" ToRole="ToRole_assoc_02ACD8AF45B9AF932C12CB775522763C"/>
+            </EntityType>
             <EntityType Name="TherapyValueHelpType" sap:label="Therapy Value Help" sap:value-list="true" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="Therapy"/>
@@ -167,11 +267,24 @@
                 <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
             </EntityType>
+            <EntityType Name="zpoco_i_oosType" sap:label="OOS Details" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OosId"/>
+                </Key>
+                <Property Name="OosId" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="OOS ID"/>
+                <Property Name="OosDetails" Type="Edm.String" MaxLength="30" sap:label="OOS Descr"/>
+                <Property Name="OosDetailsCriticality" Type="Edm.Byte"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At"/>
+            </EntityType>
             <EntityType Name="PlantType" sap:label="Manufacturing Plant" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="MfgPlantId"/>
                 </Key>
                 <Property Name="MfgPlantId" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant ID"/>
+                <Property Name="PlantId" Type="Edm.String" MaxLength="1"/>
                 <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
                 <Property Name="PlantImage" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Plant Image"/>
                 <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
@@ -223,6 +336,26 @@
                 <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
             </EntityType>
+            <Association Name="assoc_9139C118A7115DDEA87FAF4A578E0A30" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardAveilableSlotsType" Multiplicity="1" Role="FromRole_assoc_9139C118A7115DDEA87FAF4A578E0A30"/>
+                <End Type="cds_zpoco_ui_order_ovp.PlantType" Multiplicity="0..1" Role="ToRole_assoc_9139C118A7115DDEA87FAF4A578E0A30"/>
+            </Association>
+            <Association Name="assoc_EFC1A4102C672BDB45F7F6DF3FF56F66" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardSteckSetType" Multiplicity="1" Role="FromRole_assoc_EFC1A4102C672BDB45F7F6DF3FF56F66"/>
+                <End Type="cds_zpoco_ui_order_ovp.SiteType" Multiplicity="0..1" Role="ToRole_assoc_EFC1A4102C672BDB45F7F6DF3FF56F66"/>
+            </Association>
+            <Association Name="assoc_8904B609C16ABF2802ACE31FC6A16E8A" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardSteckSetType" Multiplicity="1" Role="FromRole_assoc_8904B609C16ABF2802ACE31FC6A16E8A"/>
+                <End Type="cds_zpoco_ui_order_ovp.StatusL1Type" Multiplicity="0..1" Role="ToRole_assoc_8904B609C16ABF2802ACE31FC6A16E8A"/>
+            </Association>
+            <Association Name="assoc_5F85DE0FD4BA0449B96B75C637074432" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardSteckSetType" Multiplicity="1" Role="FromRole_assoc_5F85DE0FD4BA0449B96B75C637074432"/>
+                <End Type="cds_zpoco_ui_order_ovp.StatusL2Type" Multiplicity="0..1" Role="ToRole_assoc_5F85DE0FD4BA0449B96B75C637074432"/>
+            </Association>
+            <Association Name="assoc_02ACD8AF45B9AF932C12CB775522763C" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardSteckSetType" Multiplicity="1" Role="FromRole_assoc_02ACD8AF45B9AF932C12CB775522763C"/>
+                <End Type="cds_zpoco_ui_order_ovp.TTypeType" Multiplicity="0..1" Role="ToRole_assoc_02ACD8AF45B9AF932C12CB775522763C"/>
+            </Association>
             <Association Name="assoc_E9ECF0C8B3F04E48242048B1D343A613" sap:content-version="1">
                 <End Type="cds_zpoco_ui_order_ovp.PocoOrderType" Multiplicity="1" Role="FromRole_assoc_E9ECF0C8B3F04E48242048B1D343A613"/>
                 <End Type="cds_zpoco_ui_order_ovp.CountryType" Multiplicity="0..1" Role="ToRole_assoc_E9ECF0C8B3F04E48242048B1D343A613"/>
@@ -247,6 +380,10 @@
                 <End Type="cds_zpoco_ui_order_ovp.PocoOrderType" Multiplicity="1" Role="FromRole_assoc_260DD7DDFC8286E7BE3A72D9300B7935"/>
                 <End Type="cds_zpoco_ui_order_ovp.TTypeType" Multiplicity="0..1" Role="ToRole_assoc_260DD7DDFC8286E7BE3A72D9300B7935"/>
             </Association>
+            <Association Name="assoc_E8D7CD79C2C051601942698D6B70D539" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType" Multiplicity="1" Role="FromRole_assoc_E8D7CD79C2C051601942698D6B70D539"/>
+                <End Type="cds_zpoco_ui_order_ovp.PlantType" Multiplicity="0..1" Role="ToRole_assoc_E8D7CD79C2C051601942698D6B70D539"/>
+            </Association>
             <Association Name="assoc_9E95FF5BE904B7D4889F1DCA3BF5E1C8" sap:content-version="1">
                 <End Type="cds_zpoco_ui_order_ovp.CardCapacityPlantQuantityType" Multiplicity="1" Role="FromRole_assoc_9E95FF5BE904B7D4889F1DCA3BF5E1C8"/>
                 <End Type="cds_zpoco_ui_order_ovp.PlantType" Multiplicity="0..1" Role="ToRole_assoc_9E95FF5BE904B7D4889F1DCA3BF5E1C8"/>
@@ -263,19 +400,37 @@
                 <End Type="cds_zpoco_ui_order_ovp.CardStatusL2QuantityType" Multiplicity="1" Role="FromRole_assoc_AC433775D53C25A5A6217677C64BEFFC"/>
                 <End Type="cds_zpoco_ui_order_ovp.StatusL2Type" Multiplicity="0..1" Role="ToRole_assoc_AC433775D53C25A5A6217677C64BEFFC"/>
             </Association>
+            <Association Name="assoc_D8707C7094E23A21B13A2F4D0070183B" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardTherapyL1L2Type" Multiplicity="1" Role="FromRole_assoc_D8707C7094E23A21B13A2F4D0070183B"/>
+                <End Type="cds_zpoco_ui_order_ovp.StatusL1Type" Multiplicity="0..1" Role="ToRole_assoc_D8707C7094E23A21B13A2F4D0070183B"/>
+            </Association>
+            <Association Name="assoc_29348F47C99EA4C9E686CAC63A25175A" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp.CardTherapyL1L2Type" Multiplicity="1" Role="FromRole_assoc_29348F47C99EA4C9E686CAC63A25175A"/>
+                <End Type="cds_zpoco_ui_order_ovp.StatusL2Type" Multiplicity="0..1" Role="ToRole_assoc_29348F47C99EA4C9E686CAC63A25175A"/>
+            </Association>
             <EntityContainer Name="cds_zpoco_ui_order_ovp_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="CardAlert" EntityType="cds_zpoco_ui_order_ovp.CardAlertType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardAlertWorkItem" EntityType="cds_zpoco_ui_order_ovp.CardAlertWorkItemType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardAveilableSlots" EntityType="cds_zpoco_ui_order_ovp.CardAveilableSlotsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardTherapyMaxQuantity" EntityType="cds_zpoco_ui_order_ovp.CardTherapyMaxQuantityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardOOSDescription" EntityType="cds_zpoco_ui_order_ovp.CardOOSDescriptionType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardOOS" EntityType="cds_zpoco_ui_order_ovp.CardOOSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardCapacityPlantQuantity" EntityType="cds_zpoco_ui_order_ovp.CardCapacityPlantQuantityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardStatusL1Quantity" EntityType="cds_zpoco_ui_order_ovp.CardStatusL1QuantityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardStatusL2Quantity" EntityType="cds_zpoco_ui_order_ovp.CardStatusL2QuantityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardTherapyQuantity" EntityType="cds_zpoco_ui_order_ovp.CardTherapyQuantityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardTherapyDateQuantity" EntityType="cds_zpoco_ui_order_ovp.CardTherapyDateQuantityType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardTherapyL1L2" EntityType="cds_zpoco_ui_order_ovp.CardTherapyL1L2Type" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardTherapyDateSum" EntityType="cds_zpoco_ui_order_ovp.CardTherapyDateSumType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardCapacitySlotsDateSum" EntityType="cds_zpoco_ui_order_ovp.CardCapacitySlotsDateSumType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="CardCapacitySlotsPlantSum" EntityType="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="CardTherapyClCom" EntityType="cds_zpoco_ui_order_ovp.CardTherapyClComType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="PocoOrder" EntityType="cds_zpoco_ui_order_ovp.PocoOrderType" sap:searchable="true" sap:content-version="1"/>
                 <EntitySet Name="CardPlant" EntityType="cds_zpoco_ui_order_ovp.CardPlantType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="CardSteckSet" EntityType="cds_zpoco_ui_order_ovp.CardSteckSetType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="TherapyValueHelp" EntityType="cds_zpoco_ui_order_ovp.TherapyValueHelpType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="Country" EntityType="cds_zpoco_ui_order_ovp.CountryType" sap:content-version="1"/>
+                <EntitySet Name="zpoco_i_oos" EntityType="cds_zpoco_ui_order_ovp.zpoco_i_oosType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="Plant" EntityType="cds_zpoco_ui_order_ovp.PlantType" sap:content-version="1"/>
                 <EntitySet Name="Site" EntityType="cds_zpoco_ui_order_ovp.SiteType" sap:content-version="1"/>
                 <EntitySet Name="StatusL1" EntityType="cds_zpoco_ui_order_ovp.StatusL1Type" sap:content-version="1"/>
@@ -289,9 +444,25 @@
                     <End EntitySet="PocoOrder" Role="FromRole_assoc_18ECDCA28413E3443EF6E9AD82A1E6AB"/>
                     <End EntitySet="Plant" Role="ToRole_assoc_18ECDCA28413E3443EF6E9AD82A1E6AB"/>
                 </AssociationSet>
+                <AssociationSet Name="assoc_9139C118A7115DDEA87FAF4A578E0A30" Association="cds_zpoco_ui_order_ovp.assoc_9139C118A7115DDEA87FAF4A578E0A30" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardAveilableSlots" Role="FromRole_assoc_9139C118A7115DDEA87FAF4A578E0A30"/>
+                    <End EntitySet="Plant" Role="ToRole_assoc_9139C118A7115DDEA87FAF4A578E0A30"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_EFC1A4102C672BDB45F7F6DF3FF56F66" Association="cds_zpoco_ui_order_ovp.assoc_EFC1A4102C672BDB45F7F6DF3FF56F66" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardSteckSet" Role="FromRole_assoc_EFC1A4102C672BDB45F7F6DF3FF56F66"/>
+                    <End EntitySet="Site" Role="ToRole_assoc_EFC1A4102C672BDB45F7F6DF3FF56F66"/>
+                </AssociationSet>
                 <AssociationSet Name="assoc_41F5376CB15C74ED5717FB61411EA9E1" Association="cds_zpoco_ui_order_ovp.assoc_41F5376CB15C74ED5717FB61411EA9E1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="CardTherapyDateQuantity" Role="FromRole_assoc_41F5376CB15C74ED5717FB61411EA9E1"/>
                     <End EntitySet="Plant" Role="ToRole_assoc_41F5376CB15C74ED5717FB61411EA9E1"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_02ACD8AF45B9AF932C12CB775522763C" Association="cds_zpoco_ui_order_ovp.assoc_02ACD8AF45B9AF932C12CB775522763C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardSteckSet" Role="FromRole_assoc_02ACD8AF45B9AF932C12CB775522763C"/>
+                    <End EntitySet="TType" Role="ToRole_assoc_02ACD8AF45B9AF932C12CB775522763C"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_5F85DE0FD4BA0449B96B75C637074432" Association="cds_zpoco_ui_order_ovp.assoc_5F85DE0FD4BA0449B96B75C637074432" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardSteckSet" Role="FromRole_assoc_5F85DE0FD4BA0449B96B75C637074432"/>
+                    <End EntitySet="StatusL2" Role="ToRole_assoc_5F85DE0FD4BA0449B96B75C637074432"/>
                 </AssociationSet>
                 <AssociationSet Name="assoc_74F3004E14C53A51565671CBE1CBC645" Association="cds_zpoco_ui_order_ovp.assoc_74F3004E14C53A51565671CBE1CBC645" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="PocoOrder" Role="FromRole_assoc_74F3004E14C53A51565671CBE1CBC645"/>
@@ -300,6 +471,10 @@
                 <AssociationSet Name="assoc_260DD7DDFC8286E7BE3A72D9300B7935" Association="cds_zpoco_ui_order_ovp.assoc_260DD7DDFC8286E7BE3A72D9300B7935" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="PocoOrder" Role="FromRole_assoc_260DD7DDFC8286E7BE3A72D9300B7935"/>
                     <End EntitySet="TType" Role="ToRole_assoc_260DD7DDFC8286E7BE3A72D9300B7935"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_29348F47C99EA4C9E686CAC63A25175A" Association="cds_zpoco_ui_order_ovp.assoc_29348F47C99EA4C9E686CAC63A25175A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardTherapyL1L2" Role="FromRole_assoc_29348F47C99EA4C9E686CAC63A25175A"/>
+                    <End EntitySet="StatusL2" Role="ToRole_assoc_29348F47C99EA4C9E686CAC63A25175A"/>
                 </AssociationSet>
                 <AssociationSet Name="assoc_AC433775D53C25A5A6217677C64BEFFC" Association="cds_zpoco_ui_order_ovp.assoc_AC433775D53C25A5A6217677C64BEFFC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="CardStatusL2Quantity" Role="FromRole_assoc_AC433775D53C25A5A6217677C64BEFFC"/>
@@ -317,11 +492,57 @@
                     <End EntitySet="PocoOrder" Role="FromRole_assoc_1C53BB41279369AF4A138B4AB36CE040"/>
                     <End EntitySet="StatusL1" Role="ToRole_assoc_1C53BB41279369AF4A138B4AB36CE040"/>
                 </AssociationSet>
+                <AssociationSet Name="assoc_E8D7CD79C2C051601942698D6B70D539" Association="cds_zpoco_ui_order_ovp.assoc_E8D7CD79C2C051601942698D6B70D539" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardCapacitySlotsPlantSum" Role="FromRole_assoc_E8D7CD79C2C051601942698D6B70D539"/>
+                    <End EntitySet="Plant" Role="ToRole_assoc_E8D7CD79C2C051601942698D6B70D539"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_D8707C7094E23A21B13A2F4D0070183B" Association="cds_zpoco_ui_order_ovp.assoc_D8707C7094E23A21B13A2F4D0070183B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardTherapyL1L2" Role="FromRole_assoc_D8707C7094E23A21B13A2F4D0070183B"/>
+                    <End EntitySet="StatusL1" Role="ToRole_assoc_D8707C7094E23A21B13A2F4D0070183B"/>
+                </AssociationSet>
                 <AssociationSet Name="assoc_DD5CCD00B4261FEF1F821EFB1A8A935A" Association="cds_zpoco_ui_order_ovp.assoc_DD5CCD00B4261FEF1F821EFB1A8A935A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="CardStatusL1Quantity" Role="FromRole_assoc_DD5CCD00B4261FEF1F821EFB1A8A935A"/>
                     <End EntitySet="StatusL1" Role="ToRole_assoc_DD5CCD00B4261FEF1F821EFB1A8A935A"/>
                 </AssociationSet>
+                <AssociationSet Name="assoc_8904B609C16ABF2802ACE31FC6A16E8A" Association="cds_zpoco_ui_order_ovp.assoc_8904B609C16ABF2802ACE31FC6A16E8A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CardSteckSet" Role="FromRole_assoc_8904B609C16ABF2802ACE31FC6A16E8A"/>
+                    <End EntitySet="StatusL1" Role="ToRole_assoc_8904B609C16ABF2802ACE31FC6A16E8A"/>
+                </AssociationSet>
             </EntityContainer>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyDateQuantityType/Therapy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="TherapyValueHelp"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Therapy"/>
+                                    <PropertyValue Property="ValueListProperty" String="Therapy"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyDateSumType/TherapyName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="TherapyValueHelp"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="TherapyName"/>
+                                    <PropertyValue Property="ValueListProperty" String="Therapy"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/Therapy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ValueList">
                     <Record>
@@ -373,6 +594,7 @@
                         </PropertyValue>
                     </Record>
                 </Annotation>
+                <Annotation Term="Common.SemanticObject" String="NBS_POC_OVP_COUNTRY"/>
             </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/MfgPlantId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ValueList">
@@ -402,6 +624,9 @@
                                     <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
                                 </Record>
                                 <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
                                     <PropertyValue Property="ValueListProperty" String="PlantImage"/>
                                 </Record>
                                 <Record Type="Common.ValueListParameterDisplayOnly">
@@ -411,6 +636,7 @@
                         </PropertyValue>
                     </Record>
                 </Annotation>
+                <Annotation Term="Common.SemanticObject" String="NBS_POC_OVP_PLANT"/>
             </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/TherapyTypeId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ValueList">
@@ -552,6 +778,41 @@
                     </Record>
                 </Annotation>
             </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/OosDetailsID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="zpoco_i_oos"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="OosDetailsID"/>
+                                    <PropertyValue Property="ValueListProperty" String="OosId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OosDetails"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OosDetailsCriticality"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedAt"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
                 <Annotation Term="Aggregation.ApplySupported">
@@ -594,8 +855,8 @@
                         <PropertyValue Property="NonFilterableProperties">
                             <Collection>
                                 <PropertyPath>ID</PropertyPath>
-                                <PropertyPath>Agreed</PropertyPath>
-                                <PropertyPath>Rejected</PropertyPath>
+                                <PropertyPath>Consumed</PropertyPath>
+                                <PropertyPath>Available</PropertyPath>
                             </Collection>
                         </PropertyValue>
                     </Record>
@@ -616,8 +877,24 @@
                         <PropertyValue Property="NonFilterableProperties">
                             <Collection>
                                 <PropertyPath>ID</PropertyPath>
-                                <PropertyPath>Agreed</PropertyPath>
-                                <PropertyPath>Rejected</PropertyPath>
+                                <PropertyPath>Consumed</PropertyPath>
+                                <PropertyPath>Available</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Plant"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
                             </Collection>
                         </PropertyValue>
                     </Record>
@@ -644,6 +921,114 @@
                     <Record>
                         <PropertyValue Property="NonSortableProperties">
                             <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardTherapyClCom" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>QuanTherapyType</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardTherapyDateSum" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>TherapyQuantityMax</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardTherapyL1L2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>SumTherapyQuantity</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_StatusL1"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_StatusL2"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardTherapyMaxQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>MaxQuantity</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
                         </PropertyValue>
                     </Record>
                 </Annotation>
@@ -683,6 +1068,18 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/PocoOrder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.FilterRestrictions">
                     <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="OrderCreatedDay"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Day0"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
                         <PropertyValue Property="NonFilterableProperties">
                             <Collection/>
                         </PropertyValue>
@@ -763,6 +1160,24 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/OrderUuid" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Core.Immutable"/>
             </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardAveilableSlots" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Plant"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardCapacityPlantQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.NavigationRestrictions">
                     <Record>
@@ -817,6 +1232,48 @@
                     </Record>
                 </Annotation>
             </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardSteckSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Site"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_StatusL1"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_StatusL2"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_TType"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities/CardTherapyDateQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.NavigationRestrictions">
                     <Record>
@@ -835,10 +1292,17 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsDateSumType/Agreed" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
-            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsDateSumType/Rejected" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
-            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType/Agreed" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
-            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType/Rejected" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyMaxQuantityType/MaxQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyL1L2Type/SumTherapyQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyDateSumType/TherapyQuantityMax" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsDateSumType/Consumed" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsDateSumType/Available" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType/Consumed" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType/Available" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyClComType/QuanTherapyType" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardSteckSetType/NvsId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticObject" String="Action"/>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.cds_zpoco_ui_order_ovp_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
                     <Record Type="Org.OData.Capabilities.V1.BatchSupportType">

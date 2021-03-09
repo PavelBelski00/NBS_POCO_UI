@@ -26,9 +26,377 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema Namespace="zpoco_ui_order_ovp_o2_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAlertType/AlertUuid">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAlertType/UpdatedDate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAlertType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="NvsId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AlertMessage"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAlertWorkItemType/AlertWorkItemUuid">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAlertWorkItemType/UpdatedDate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAlertWorkItemType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="NvsId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AlertMessage"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardAveilableSlotsType">
+                <Annotation Term="UI.Chart" Qualifier="Dec3">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Available slots in 3rd decade"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>PlantID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="PlantID"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>decade_3rd</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="decade_3rd"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                    <PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#decade_3rd"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Chart" Qualifier="Dec2">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Available slots in 2nd decade"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>PlantID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="PlantID"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>decade_2nd</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="decade_2nd"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                    <PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#decade_2nd"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Chart" Qualifier="Dec1">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Available slots in 1st decade"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>PlantID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="PlantID"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>decade_1st</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="decade_1st"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                    <PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#decade_1st"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="decade_1st">
+                    <Record>
+                        <PropertyValue Property="Value" Path="decade_1st"/>
+                        <PropertyValue Property="Title" String="1st Decade"/>
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="decade_2nd">
+                    <Record>
+                        <PropertyValue Property="Value" Path="decade_2nd"/>
+                        <PropertyValue Property="Title" String="2nt Decade"/>
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="decade_3rd">
+                    <Record>
+                        <PropertyValue Property="Value" Path="decade_3rd"/>
+                        <PropertyValue Property="Title" String="3rd Decade"/>
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyMaxQuantityType/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyMaxQuantityType">
+                <Annotation Term="UI.Chart">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Data by Plants"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>PlantName</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="PlantName"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>MaxQuantity</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="MaxQuantity"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                    <PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#MaxQuantity"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="MaxQuantity">
+                    <Record>
+                        <PropertyValue Property="Value" Path="MaxQuantity"/>
+                        <PropertyValue Property="Title" String="Maximum Quantity"/>
+                        <PropertyValue Property="TargetValue" Decimal="7"/>
+                        <PropertyValue Property="CriticalityCalculation">
+                            <Record>
+                                <PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Maximize"/>
+                                <PropertyValue Property="DeviationRangeLowValue" Decimal="10"/>
+                                <PropertyValue Property="ToleranceRangeLowValue" Decimal="15"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TrendCalculation">
+                            <Record>
+                                <PropertyValue Property="ReferenceValue" Path="TherapySum"/>
+                                <PropertyValue Property="UpDifference" Decimal="0"/>
+                                <PropertyValue Property="DownDifference" Decimal="0"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.KPI" Qualifier="MaxQuantity">
+                    <Record>
+                        <PropertyValue Property="DataPoint" Path="@UI.DataPoint#MaxQuantity"/>
+                        <PropertyValue Property="Detail">
+                            <Record Type="UI.KPIDetailType">
+                                <PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#Default"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MfgPlantId"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem" Qualifier="ChartUp">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PlantName"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="Max. Quantity"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#MaxQuantity"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record>
+                        <PropertyValue Property="GroupBy">
+                            <Collection>
+                                <PropertyPath>PlantName</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields" Qualifier="Default">
+                    <Collection>
+                        <PropertyPath>MfgPlantId</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionPresentationVariant" Qualifier="Default">
+                    <Record>
+                        <PropertyValue Property="Text" String=""/>
+                        <PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#Default"/>
+                        <PropertyValue Property="PresentationVariant" Path="@UI.PresentationVariant#Default"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionVariant" Qualifier="Default">
+                    <Record>
+                        <PropertyValue Property="Text" String=""/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardOOSDescriptionType">
+                <Annotation Term="UI.Chart" Qualifier="ChartOosDescription">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="OOS Description"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>Description</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="Description"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>OrdersOosDescription</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="OrdersOosDescription"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.Chart#ChartOosDescription</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardOOSType">
+                <Annotation Term="UI.Chart" Qualifier="ChartQuanOfCases">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Aggregation by plants"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>OosDetailsID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="OosDetailsID"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>QuanOfCases</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="QuanOfCases"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.Chart#ChartQuanOfCases</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacityPlantQuantityType">
                 <Annotation Term="UI.Chart" Qualifier="ChartPlantQuantity">
                     <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Aggregation by plants"/>
                         <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
                         <PropertyValue Property="Dimensions">
                             <Collection>
@@ -71,6 +439,7 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.CardStatusL1QuantityType">
                 <Annotation Term="UI.Chart" Qualifier="ChartStatusL1Quantity">
                     <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Number of Orders per Level 1 Status"/>
                         <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
                         <PropertyValue Property="Dimensions">
                             <Collection>
@@ -113,6 +482,7 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.CardStatusL2QuantityType">
                 <Annotation Term="UI.Chart" Qualifier="ChartStatusL2Quantity">
                     <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Number of Orders per Level 2 Status"/>
                         <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
                         <PropertyValue Property="Dimensions">
                             <Collection>
@@ -155,6 +525,7 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyQuantityType">
                 <Annotation Term="UI.Chart" Qualifier="ChartTherapyQuantity">
                     <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Number of Orders per Therapy"/>
                         <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
                         <PropertyValue Property="Dimensions">
                             <Collection>
@@ -252,6 +623,87 @@
                     </Record>
                 </Annotation>
             </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyL1L2Type/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyL1L2Type">
+                <Annotation Term="UI.Chart" Qualifier="quantityByL2">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Therapy quantity by L2 Status"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>L2</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="L2"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>SumTherapyQuantity</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="SumTherapyQuantity"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                    <PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#SumTherapyQuantity"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Chart" Qualifier="quantityByL1">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Therapy quantity by L1 Status"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>L1</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="L1"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>SumTherapyQuantity</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="SumTherapyQuantity"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                    <PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#SumTherapyQuantity"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="SumTherapyQuantity">
+                    <Record>
+                        <PropertyValue Property="Value" Path="SumTherapyQuantity"/>
+                        <PropertyValue Property="Title" String=""/>
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Number"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyDateSumType/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyDateSumType">
                 <Annotation Term="UI.DataPoint" Qualifier="ByDate">
                     <Record>
@@ -259,30 +711,49 @@
                         <PropertyValue Property="Title" String="By Date"/>
                     </Record>
                 </Annotation>
-                <Annotation Term="UI.DataPoint" Qualifier="TherapyQuantitySum">
+                <Annotation Term="UI.DataPoint" Qualifier="TherapyQuantityMax">
                     <Record>
-                        <PropertyValue Property="Value" Path="TherapyQuantitySum"/>
+                        <PropertyValue Property="Value" Path="TherapyQuantityMax"/>
                         <PropertyValue Property="Title" String=""/>
+                        <PropertyValue Property="MinimumValue" Decimal="0"/>
+                        <PropertyValue Property="MaximumValue" Decimal="15"/>
                         <PropertyValue Property="CriticalityCalculation">
                             <Record>
                                 <PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Maximize"/>
-                                <PropertyValue Property="DeviationRangeLowValue" Decimal="2"/>
-                                <PropertyValue Property="ToleranceRangeLowValue" Decimal="4"/>
+                                <PropertyValue Property="DeviationRangeLowValue" Decimal="5"/>
+                                <PropertyValue Property="ToleranceRangeLowValue" Decimal="8"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TrendCalculation">
+                            <Record>
+                                <PropertyValue Property="ReferenceValue" Path="ThQuantity"/>
+                                <PropertyValue Property="UpDifference" Decimal="0"/>
+                                <PropertyValue Property="DownDifference" Decimal="0"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.KPI" Qualifier="TherapyQuantityMax">
+                    <Record>
+                        <PropertyValue Property="DataPoint" Path="@UI.DataPoint#TherapyQuantityMax"/>
+                        <PropertyValue Property="Detail">
+                            <Record Type="UI.KPIDetailType">
+                                <PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#Deafult"/>
                             </Record>
                         </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="UI.LineItem">
                     <Collection>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#TherapyQuantityMax"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Therapy"/>
+                            <PropertyValue Property="Value" Path="TherapyName"/>
                         </Record>
                         <Record Type="UI.DataFieldForAnnotation">
                             <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#ByDate"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
-                        </Record>
-                        <Record Type="UI.DataFieldForAnnotation">
-                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#TherapyQuantitySum"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                     </Collection>
@@ -292,16 +763,24 @@
                         <PropertyValue Property="SortOrder">
                             <Collection>
                                 <Record Type="Common.SortOrderType">
-                                    <PropertyValue Property="Property" PropertyPath="TherapyQuantitySum"/>
-                                    <PropertyValue Property="Descending" Bool="true"/>
+                                    <PropertyValue Property="Property" PropertyPath="TherapyName"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
                                 </Record>
                             </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="GroupBy">
+                            <Collection>
+                                <PropertyPath>TherapyName</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection/>
                         </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="UI.SelectionFields">
                     <Collection>
-                        <PropertyPath>Therapy</PropertyPath>
+                        <PropertyPath>TherapyName</PropertyPath>
                     </Collection>
                 </Annotation>
             </Annotations>
@@ -311,6 +790,7 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsDateSumType">
                 <Annotation Term="UI.Chart" Qualifier="ChartSumSlotsDate">
                     <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Overview of open and consumed slots"/>
                         <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
                         <PropertyValue Property="Dimensions">
                             <Collection>
@@ -327,18 +807,18 @@
                         </PropertyValue>
                         <PropertyValue Property="Measures">
                             <Collection>
-                                <PropertyPath>Rejected</PropertyPath>
-                                <PropertyPath>Agreed</PropertyPath>
+                                <PropertyPath>Available</PropertyPath>
+                                <PropertyPath>Consumed</PropertyPath>
                             </Collection>
                         </PropertyValue>
                         <PropertyValue Property="MeasureAttributes">
                             <Collection>
                                 <Record Type="UI.ChartMeasureAttributeType">
-                                    <PropertyValue Property="Measure" PropertyPath="Rejected"/>
+                                    <PropertyValue Property="Measure" PropertyPath="Available"/>
                                     <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
                                 </Record>
                                 <Record Type="UI.ChartMeasureAttributeType">
-                                    <PropertyValue Property="Measure" PropertyPath="Agreed"/>
+                                    <PropertyValue Property="Measure" PropertyPath="Consumed"/>
                                     <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
                                 </Record>
                             </Collection>
@@ -361,6 +841,7 @@
             <Annotations Target="cds_zpoco_ui_order_ovp.CardCapacitySlotsPlantSumType">
                 <Annotation Term="UI.Chart" Qualifier="ChartSumSlotsPlant">
                     <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Capacity Overview per Plant"/>
                         <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
                         <PropertyValue Property="Dimensions">
                             <Collection>
@@ -377,18 +858,18 @@
                         </PropertyValue>
                         <PropertyValue Property="Measures">
                             <Collection>
-                                <PropertyPath>Rejected</PropertyPath>
-                                <PropertyPath>Agreed</PropertyPath>
+                                <PropertyPath>Available</PropertyPath>
+                                <PropertyPath>Consumed</PropertyPath>
                             </Collection>
                         </PropertyValue>
                         <PropertyValue Property="MeasureAttributes">
                             <Collection>
                                 <Record Type="UI.ChartMeasureAttributeType">
-                                    <PropertyValue Property="Measure" PropertyPath="Rejected"/>
+                                    <PropertyValue Property="Measure" PropertyPath="Available"/>
                                     <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
                                 </Record>
                                 <Record Type="UI.ChartMeasureAttributeType">
-                                    <PropertyValue Property="Measure" PropertyPath="Agreed"/>
+                                    <PropertyValue Property="Measure" PropertyPath="Consumed"/>
                                     <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
                                 </Record>
                             </Collection>
@@ -405,7 +886,69 @@
                     </Record>
                 </Annotation>
             </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyClComType/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardTherapyClComType">
+                <Annotation Term="UI.Chart" Qualifier="ChartTherapyClCom">
+                    <Record Type="UI.ChartDefinitionType">
+                        <PropertyValue Property="Title" String="Number of Orders per Therapy ID"/>
+                        <PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+                        <PropertyValue Property="Dimensions">
+                            <Collection>
+                                <PropertyPath>TherapyTypeId</PropertyPath>
+                                <PropertyPath>Therapy</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="DimensionAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="TherapyTypeId"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Series"/>
+                                </Record>
+                                <Record Type="UI.ChartDimensionAttributeType">
+                                    <PropertyValue Property="Dimension" PropertyPath="Therapy"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Measures">
+                            <Collection>
+                                <PropertyPath>QuanTherapyType</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="MeasureAttributes">
+                            <Collection>
+                                <Record Type="UI.ChartMeasureAttributeType">
+                                    <PropertyValue Property="Measure" PropertyPath="QuanTherapyType"/>
+                                    <PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant" Qualifier="Default">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="TherapyTypeId"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.Chart#ChartTherapyClCom</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/OrderUuid">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType/OosDetails">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
             <Annotations Target="cds_zpoco_ui_order_ovp.PocoOrderType">
@@ -509,6 +1052,9 @@
                         <PropertyValue Property="Data">
                             <Collection>
                                 <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="OrderCreatedDay"/>
+                                </Record>
+                                <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="Day0"/>
                                 </Record>
                                 <Record Type="UI.DataField">
@@ -524,6 +1070,9 @@
                             <Collection>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="Oos"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="OosDetailsID"/>
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="OosDescription"/>
@@ -603,19 +1152,27 @@
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="Day0"/>
+                            <PropertyValue Property="Value" Path="OrderCreatedDay"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="StatusL1Id"/>
-                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Value" Path="Day0"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="StatusL2Id"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="StatusL1Id"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="OrderingSiteId"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="OosDetailsID"/>
                             <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
                         </Record>
                         <Record Type="UI.DataField">
@@ -659,12 +1216,16 @@
                 <Annotation Term="UI.SelectionFields">
                     <Collection>
                         <PropertyPath>NvsId</PropertyPath>
+                        <PropertyPath>Therapy</PropertyPath>
                         <PropertyPath>CountryId</PropertyPath>
                         <PropertyPath>MfgPlantId</PropertyPath>
                         <PropertyPath>TherapyTypeId</PropertyPath>
+                        <PropertyPath>OrderCreatedDay</PropertyPath>
+                        <PropertyPath>Day0</PropertyPath>
                         <PropertyPath>StatusL1Id</PropertyPath>
                         <PropertyPath>StatusL2Id</PropertyPath>
                         <PropertyPath>OrderingSiteId</PropertyPath>
+                        <PropertyPath>OosDetailsID</PropertyPath>
                     </Collection>
                 </Annotation>
             </Annotations>
@@ -793,6 +1354,107 @@
                     <Collection>
                         <PropertyPath>MfgPlantId</PropertyPath>
                         <PropertyPath>PlantName</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp.CardSteckSetType">
+                <Annotation Term="UI.FieldGroup" Qualifier="StatusL1">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="L1"/>
+                                    <PropertyValue Property="Value" Path="StatusL1Id"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Label" String="L1 Stats"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="StatusL2">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="L2"/>
+                                    <PropertyValue Property="Value" Path="StatusL2Id"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Label" String="L2 Stats"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="NVS Order"/>
+                        <PropertyValue Property="TypeNamePlural" String="NVS Orders"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Order ID"/>
+                                <PropertyValue Property="Value" Path="NvsId"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Label" String="Therapy"/>
+                                <PropertyValue Property="Value" Path="Therapy"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataFieldForIntentBasedNavigation">
+                            <PropertyValue Property="Label" String="Navigate to orders"/>
+                            <PropertyValue Property="SemanticObject" String="Action"/>
+                            <PropertyValue Property="Action" String="zpoco_c_order"/>
+                            <PropertyValue Property="RequiresContext" Bool="false"/>
+                        </Record>
+                        <Record Type="UI.DataFieldWithUrl">
+                            <PropertyValue Property="Label" String="Customer Site"/>
+                            <PropertyValue Property="Value" Path="OrderingSiteId"/>
+                            <PropertyValue Property="Url" String="">
+                                <Annotation Term="Core.Messages">
+                                    <Collection>
+                                        <Record>
+                                            <PropertyValue Property="message" String="ERROR: Invalid Path"/>
+                                            <PropertyValue Property="severity" String="error"/>
+                                        </Record>
+                                    </Collection>
+                                </Annotation>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem" Qualifier="ordOverView">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Nvs Order"/>
+                            <PropertyValue Property="Value" Path="NvsId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Tax Amount"/>
+                            <PropertyValue Property="Value" Path="TherapyTypeId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created Day"/>
+                            <PropertyValue Property="Value" Path="OrderCreatedDay"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Ordering Site Id"/>
+                            <PropertyValue Property="Value" Path="OrderingSiteId"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForIntentBasedNavigation">
+                            <PropertyValue Property="Label" String="NvsOrder"/>
+                            <PropertyValue Property="SemanticObject" String="Action"/>
+                            <PropertyValue Property="Action" String="zpoco_c_order"/>
+                            <PropertyValue Property="RequiresContext" Bool="false"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>NvsId</PropertyPath>
                     </Collection>
                 </Annotation>
             </Annotations>

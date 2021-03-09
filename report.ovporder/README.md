@@ -1,15 +1,15 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Wed Mar 03 2021 14:13:04 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Tue Mar 09 2021 12:30:41 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori|
-|**App Generator Version**<br>1.1.3|
+|**App Generator Version**<br>1.1.4|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Floorplan Used**<br>Overview Page|
 |**Service Type**<br>SAP System (ABAP Environment on SAP Business Technology Platform)|
 |**Service URL**<br>https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ORDER_OVP_O2/
 |**Module Name**<br>report.ovporder|
-|**Application Title**<br>Orders Overview |
+|**Application Title**<br>Orders Analytics|
 |**Namespace**<br>nbs.poc.ovp.ui.app|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>Latest|
@@ -18,7 +18,7 @@
 
 ## report.ovporder
 
-Orders Overview 
+Orders Analytics
 
 ### Starting the generated app
 

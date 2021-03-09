@@ -1,8 +1,5 @@
 {
     "_version": "",
-    "sap.cloud": {
-        "service": "nbspocovpuiapprouter"
-    },
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.report.ovporder",
         "type": "application",
@@ -356,10 +353,23 @@
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
                 }
+            },
+            "CardOOS": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Details",
+                    "listType": "extended",
+                    "entitySet": "CardOOS",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartQuanOfCases"
+                }
             }
         }
     },
-    "sap.ui.generic.app": {
-        "settings": {}
+    "sap.cloud": {
+        "public": true,
+        "service": "nbspocovpuiapprouter"
     }
 }
