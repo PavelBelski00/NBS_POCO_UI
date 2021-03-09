@@ -52,8 +52,8 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-capacity-inbound": {
                     "signature": {
-                        "parameters": { "MfgPlantId": {} },
-                        "additionalParameters": "ignored"
+                        "parameters": { },
+                        "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_OVP_CAPACITY",
                     "action": "manage",
