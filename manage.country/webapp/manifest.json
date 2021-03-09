@@ -45,30 +45,6 @@
         "sourceTemplate": {
             "id": "ui5template.smartTemplate",
             "version": "1.40.12"
-        },
-
-        "crossNavigation": {
-            "inbounds": {
-                "nbs-poc-ovp-ui-app-manage-country-inbound": {
-                    "signature": {
-                        "parameters": { 
-                            "CountryId": {
-                            }
-                         },
-                        "additionalParameters": "notallowed"
-                    },
-                    "semanticObject": "NBS_POC_OVP_COUNTRY",
-                    "action": "manage",
-                    "title": "{{AppTitle}}",
-                    "subTitle": "",
-                    "icon": "sap-icon://globe",
-                    "indicatorDataSource": {
-                        "dataSource": "mainService",
-                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_COUNTRY_O2/Country/$count",
-                        "refresh": 10
-                    }
-                }       
-            }
         }
     },
     "sap.ui": {
