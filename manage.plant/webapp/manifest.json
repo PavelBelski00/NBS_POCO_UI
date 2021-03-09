@@ -50,8 +50,8 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-plant-inbound": {
                     "signature": {
-                        "parameters": { },
-                        "additionalParameters": "allowed"
+                        "parameters": { "MfgPlantId": {} },
+                        "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_PLANT",
                     "action": "manage",
@@ -63,14 +63,6 @@
                         "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_PLANT_O2/Plant/$count",
                         "refresh": 10
                     }
-                },
-                "nbs-poc-ovp-ui-app-display-plant-inbound": {
-                    "signature": {
-                        "parameters": { "MfgPlantId": { "required": true } },
-                        "additionalParameters": "ignored"
-                    },
-                    "semanticObject": "NBS_POC_OVP_PLANT",
-                    "action": "display"
                 }
             }
         }

@@ -52,8 +52,8 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-alert-inbound": {
                     "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
+                        "parameters": { "NvsId": {} },
+                        "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_ALERT",
                     "action": "manage",
