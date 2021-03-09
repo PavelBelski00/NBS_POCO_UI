@@ -55,8 +55,13 @@
                     "semanticObject": "NBS_POC_OVP_OOS",
                     "action": "manage",
                     "title": "{{AppTitle}}",
-                    "subTitle": "",
-                    "icon": ""
+                    "subTitle": "sap-icon://cause",
+                    "icon": "",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_OOS_O2/OOSDetails/$count",
+                        "refresh": 10
+                    }
                 }
             }
         }

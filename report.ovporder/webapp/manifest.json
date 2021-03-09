@@ -372,5 +372,8 @@
     "sap.cloud": {
         "public": true,
         "service": "nbspocovpuiapprouter"
+    },
+    "sap.ui.generic.app": {
+        "settings": {}
     }
 }
