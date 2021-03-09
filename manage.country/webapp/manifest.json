@@ -53,8 +53,8 @@
                         "parameters": { "CountryId": {} },
                         "additionalParameters": "ignored"
                     },
-                    "semanticObject": "NBS_POC_OVP_COUNTRY",
-                    "action": "manage",
+                    "semanticObject": "Country",
+                    "action": "display",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
                     "icon": "sap-icon://globe",
