@@ -332,7 +332,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": " ",
+                    "title": "Orders per Therapy ID",
                     "entitySet": "CardTherapyClCom",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#ChartTherapyClCom",
