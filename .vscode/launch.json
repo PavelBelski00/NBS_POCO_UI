@@ -1,501 +1,501 @@
 {
-    "configurations": [
-        {
-            "name": "Start manage.capacity",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.capacity",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.capacity\"}"
-            }
-        },
-        {
-            "name": "Start manage.capacity Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.capacity",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.capacity\"}"
-            }
-        },
-        {
-            "name": "Start manage.capacity Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.capacity",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.capacity\"}"
-            }
-        },
-        {
-            "name": "Start manage.order",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.order",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
-            }
-        },
-        {
-            "name": "Start manage.order Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.order",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
-            }
-        },
-        {
-            "name": "Start manage.order Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.order",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
-            }
-        },
-        {
-            "name": "Start manage.label",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.label",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.label\"}"
-            }
-        },
-        {
-            "name": "Start manage.label Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.label",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.label\"}"
-            }
-        },
-        {
-            "name": "Start manage.label Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.label",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.label\"}"
-            }
-        },
-        {
-            "name": "Start manage.stsl2",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.stsl2",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.stsl2\"}"
-            }
-        },
-        {
-            "name": "Start manage.stsl2 Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.stsl2",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.stsl2\"}"
-            }
-        },
-        {
-            "name": "Start manage.stsl2 Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.stsl2",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.stsl2\"}"
-            }
-        },
-        {
-            "name": "Start manage.site",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.site",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.site\"}"
-            }
-        },
-        {
-            "name": "Start manage.site Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.site",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.site\"}"
-            }
-        },
-        {
-            "name": "Start manage.site Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.site",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.site\"}"
-            }
-        },
-        {
-            "name": "Start manage.plant",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.plant",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.plant\"}"
-            }
-        },
-        {
-            "name": "Start manage.plant Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.plant",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.plant\"}"
-            }
-        },
-        {
-            "name": "Start manage.plant Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.plant",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.plant\"}"
-            }
-        },
-        {
-            "name": "Start report.ovporder",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/report.ovporder",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/report.ovporder\"}"
-            }
-        },
-        {
-            "name": "Start report.ovporder Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/report.ovporder",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/report.ovporder\"}"
-            }
-        },
-        {
-            "name": "Start report.ovporder Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/report.ovporder",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/report.ovporder\"}"
-            }
-        },
-        {
-            "name": "Start manage.oos",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npm",
-            "cwd": "${workspaceFolder}/manage.oos",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/manage.oos\"}"
-            }
-        },
-        {
-            "name": "Start manage.oos Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.oos",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-mock"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/manage.oos\"}"
-            }
-        },
-        {
-            "name": "Start manage.oos Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/manage.oos",
-            "runtimeExecutable": "npm",
-            "windows": {
-                "runtimeExecutable": "npm.cmd"
-            },
-            "runtimeArgs": [
-                "run-script",
-                "start-local"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/manage.oos\"}"
-            }
-        }
-    ],
-    "compounds": [],
-    "inputs": [
-        {
-            "id": "UI5Version",
-            "type": "command",
-            "command": "sap.ux.appGenerator.ui5Version"
-        }
-    ],
-    "version": "0.2.0"
+  "configurations": [
+    {
+      "name": "Start manage.capacity",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.capacity",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.capacity\"}"
+      }
+    },
+    {
+      "name": "Start manage.capacity Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.capacity",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.capacity\"}"
+      }
+    },
+    {
+      "name": "Start manage.capacity Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.capacity",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.capacity\"}"
+      }
+    },
+    {
+      "name": "Start manage.order",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.order",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
+      }
+    },
+    {
+      "name": "Start manage.order Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.order",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
+      }
+    },
+    {
+      "name": "Start manage.order Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.order",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.order\"}"
+      }
+    },
+    {
+      "name": "Start manage.label",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.label",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.label\"}"
+      }
+    },
+    {
+      "name": "Start manage.label Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.label",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.label\"}"
+      }
+    },
+    {
+      "name": "Start manage.label Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.label",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.label\"}"
+      }
+    },
+    {
+      "name": "Start manage.stsl2",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.stsl2",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.stsl2\"}"
+      }
+    },
+    {
+      "name": "Start manage.stsl2 Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.stsl2",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.stsl2\"}"
+      }
+    },
+    {
+      "name": "Start manage.stsl2 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.stsl2",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.stsl2\"}"
+      }
+    },
+    {
+      "name": "Start manage.site",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.site",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.site\"}"
+      }
+    },
+    {
+      "name": "Start manage.site Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.site",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.site\"}"
+      }
+    },
+    {
+      "name": "Start manage.site Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.site",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.site\"}"
+      }
+    },
+    {
+      "name": "Start manage.plant",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.plant",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.plant\"}"
+      }
+    },
+    {
+      "name": "Start manage.plant Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.plant",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.plant\"}"
+      }
+    },
+    {
+      "name": "Start manage.plant Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.plant",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/manage.plant\"}"
+      }
+    },
+    {
+      "name": "Start report.ovporder",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/report.ovporder",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/report.ovporder\"}"
+      }
+    },
+    {
+      "name": "Start report.ovporder Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/report.ovporder",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/report.ovporder\"}"
+      }
+    },
+    {
+      "name": "Start report.ovporder Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/report.ovporder",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/report.ovporder\"}"
+      }
+    },
+    {
+      "name": "Start manage.oos",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/manage.oos",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/manage.oos\"}"
+      }
+    },
+    {
+      "name": "Start manage.oos Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.oos",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-mock"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/manage.oos\"}"
+      }
+    },
+    {
+      "name": "Start manage.oos Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/manage.oos",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "runtimeArgs": [
+        "run-script",
+        "start-local"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/manage.oos\"}"
+      }
+    }
+  ],
+  "compounds": [],
+  "inputs": [
+    {
+      "id": "UI5Version",
+      "type": "command",
+      "command": "sap.ux.appGenerator.ui5Version"
+    }
+  ],
+  "version": "0.2.0"
 }
