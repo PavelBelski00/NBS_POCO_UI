@@ -56,7 +56,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": ""
+                    "icon": "sap-icon://activity-items",
+                    "indicatorDataSource": {
+                    "dataSource": "mainService",
+                    "path": "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_OOS_O2/OOSDetails/$count",
+                    "refresh": 10
+                    } 
                 }
             }
         }
