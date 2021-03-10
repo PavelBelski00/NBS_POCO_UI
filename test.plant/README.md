@@ -1,0 +1,36 @@
+## Application Details
+|               |
+| ------------- |
+|**Generation Date and Time**<br>Wed Mar 10 2021 09:49:10 GMT+0000 (Coordinated Universal Time)|
+|**App Generator**<br>@sap/generator-fiori|
+|**App Generator Version**<br>1.1.4|
+|**Generation Platform**<br>SAP Business Application Studio|
+|**Floorplan Used**<br>List Report Object Page V2|
+|**Service Type**<br>SAP System (ABAP Environment on SAP Business Technology Platform)|
+|**Service URL**<br>https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_PLANT_O2/
+|**Module Name**<br>test.plant|
+|**Application Title**<br>plant|
+|**Namespace**<br>|
+|**UI5 Theme**<br>sap_fiori_3|
+|**UI5 Version**<br>1.85.0|
+|**Enable Telemetry**<br>True|
+|**Main Entity**<br>Plant|
+
+## test.plant
+
+A Fiori application.
+
+### Starting the generated app
+
+-   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
+
+```
+    npm start
+```
+
+
+#### Pre-requisites:
+
+1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
+
+
