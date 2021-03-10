@@ -90,6 +90,10 @@ modules:
       - nbspocovpuiappmanagealert.zip
       name: nbspocovpuiappmanagealert
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappmanageoos.zip
+      name: nbspocovpuiappmanageoos
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -203,6 +207,16 @@ modules:
 - name: nbspocovpuiappmanagealert
   type: html5
   path: manage.alert
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappmanageoos
+  type: html5
+  path: manage.oos
   build-parameters:
     build-result: dist
     builder: custom
