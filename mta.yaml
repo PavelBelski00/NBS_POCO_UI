@@ -94,14 +94,6 @@ modules:
       - nbspocovpuiappmanageoos.zip
       name: nbspocovpuiappmanageoos
       target-path: resources/
-    - artifacts:
-      - testplant.zip
-      name: testplant
-      target-path: resources/
-    - artifacts:
-      - testcapacity.zip
-      name: testcapacity
-      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -225,26 +217,6 @@ modules:
 - name: nbspocovpuiappmanageoos
   type: html5
   path: manage.oos
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: testplant
-  type: html5
-  path: test.plant
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: testcapacity
-  type: html5
-  path: test.capacity
   build-parameters:
     build-result: dist
     builder: custom
