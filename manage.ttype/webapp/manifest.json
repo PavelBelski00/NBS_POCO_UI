@@ -50,8 +50,9 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-ttype-inbound": {
                     "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
+                        "parameters": { "TherapyTypeId": {},
+                                        "TherapyTypeName":{}},
+                        "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_TTYPE",
                     "action": "manage",

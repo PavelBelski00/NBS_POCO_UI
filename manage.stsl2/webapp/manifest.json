@@ -50,8 +50,9 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-stsl2-inbound": {
                     "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
+                        "parameters": { "StatusL2Id": {},
+                                        "StatusL2Name":{}},
+                        "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_STSL2",
                     "action": "manage",

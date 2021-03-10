@@ -49,8 +49,9 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-oos-inbound": {
                     "signature": {
-                        "parameters": {},
-                        "additionalParameters": "allowed"
+                        "parameters": { "OosId": {},
+                                        "OosDetails": {}},
+                        "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_OOS",
                     "action": "manage",
