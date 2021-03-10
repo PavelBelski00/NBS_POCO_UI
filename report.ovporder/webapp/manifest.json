@@ -366,6 +366,35 @@
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartQuanOfCases"
                 }
+            },
+            "CardStL1Days": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Status L1 by Days",
+                    "entitySet": "CardStL1Days",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days10",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 30 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days30",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 365 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days365",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
             }
         }
     },
