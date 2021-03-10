@@ -914,6 +914,67 @@
             "env": {
                 "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/test.plant\"}"
             }
+        },
+        {
+            "name": "Start test.capacity",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/test.capacity",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/test.capacity\"}"
+            }
+        },
+        {
+            "name": "Start test.capacity Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/test.capacity",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-mock"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/test.capacity\"}"
+            }
+        },
+        {
+            "name": "Start test.capacity Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/test.capacity",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-local"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/nbs-poc-ovp-ui-app/test.capacity\"}"
+            }
         }
     ],
     "compounds": [],
