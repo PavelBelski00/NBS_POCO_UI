@@ -318,25 +318,24 @@
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsDate"
                 }
             },
-            "CardCapacityPlantQuantity": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Plants",
-                    "listType": "extended",
-                    "entitySet": "CardCapacityPlantQuantity",
-                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartPlantQuantity"
-                }
-            },
             "CardAlert": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.table",
                 "settings": {
                     "title": "Alerts",
                     "entitySet": "CardAlert",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                }
+            },
+            "CardAlertFilter": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Alerts",
+                    "entitySet": "CardAlertFilter",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
@@ -424,7 +423,45 @@
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
-            }
+            },
+
+            "CardCapacityPlantQuantity": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Plants by Dates",
+                    "listType": "extended",
+                    "entitySet": "CardCapacityPlantQuantity",
+                    "tabs": [
+                        {
+                            "value": "Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days10",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 1 Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days1m",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days3m",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days1y",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"                    
+                }
+            }            
+
+
         }
     },
     "sap.cloud": {
