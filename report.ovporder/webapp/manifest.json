@@ -295,29 +295,7 @@
                     "listFlavor": "standard",
                     "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
                 }
-            },
-            "CardCapacitySlotsPlantSum": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Plant Capacity",
-                    "entitySet": "CardCapacitySlotsPlantSum",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsPlant"
-                }
-            },
-            "CardCapacitySlotsDateSum": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Capacity Data",
-                    "entitySet": "CardCapacitySlotsDateSum",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsDate"
-                }
-            },            
+            },          
             "CardAlertFilter": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.table",
@@ -467,7 +445,75 @@
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"                    
                 }
-            }            
+            },
+            "CardCapacitySlotsPlantSum": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Plant Capacity",
+                    "entitySet": "CardCapacitySlotsPlantSum",
+                    "tabs": [
+                        {
+                            "value": "Next 3 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 1 Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "Next 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardCapacitySlotsDateSum": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Capacity Data",
+                    "entitySet": "CardCapacitySlotsDateSum",
+                    "tabs": [
+                        {
+                            "value": "Next 3 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 1 Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "Next 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            }           
 
 
         }
