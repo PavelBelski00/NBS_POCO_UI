@@ -317,19 +317,7 @@
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsDate"
                 }
-            },
-            "CardAlert": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.table",
-                "settings": {
-                    "title": "Alerts",
-                    "entitySet": "CardAlert",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
-                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
-                }
-            },
+            },            
             "CardAlertFilter": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.table",
@@ -342,12 +330,12 @@
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
                 }
             },
-            "CardAlertWorkItem": {
+            "CardAlertWIFilter": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.table",
                 "settings": {
                     "title": "Work Items",
-                    "entitySet": "CardAlertWorkItem",
+                    "entitySet": "CardAlertWIFilter",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
@@ -375,20 +363,40 @@
                     "showFilterInHeader": true,
                     "tabs": [
                         {
-                            "value": "Last 10 Days",
-                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days10",
+                            "value": "CrDate: Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last10Days",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
-                            "value": "Last 30 Days",
-                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days30",
+                            "value": "CrDate: Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last1Month",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
-                            "value": "Last 365 Days",
-                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#days365",
+                            "value": "CrDate: Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last3Months",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                        }
+                        },                        
+                        {
+                            "value": "CrDate: Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "D0: Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last10Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "D0: Last 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "D0: Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
                     ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
