@@ -72,7 +72,10 @@
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_OVP_CAPACITY",
-                    "action": "displayConsumed"
+                    "action": "displayConsumed",
+                    "title": "{{AppTitle}}",
+                    "subTitle": "Display Consumed",
+                    "icon": "sap-icon://target-group"
                 },
                 "nbs-poc-ovp-ui-app-displayAvailable-capacity-inbound": {
                     "signature": {
@@ -80,7 +83,10 @@
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_OVP_CAPACITY",
-                    "action": "displayAvailable"
+                    "action": "displayAvailable",
+                    "title": "{{AppTitle}}",
+                    "subTitle": "Display Available",
+                    "icon": "sap-icon://target-group"
                 }
             }
         }
