@@ -65,22 +65,6 @@
                         "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_CAPACITY_O2/Capacity/$count",
                         "refresh": 10
                     }
-                },
-                "nbs-poc-ovp-ui-app-displayConsumed-capacity-inbound": {
-                    "signature": {
-                        "parameters": { "ConsumedSlots": { "defaultValue": {"value": "true"} }},
-                        "additionalParameters": "allowed"
-                    },
-                    "semanticObject": "NBS_POC_OVP_SLOTSCONSUMED",
-                    "action": "display"
-                },
-                "nbs-poc-ovp-ui-app-displayAvailable-capacity-inbound": {
-                    "signature": {
-                        "parameters": { "ConsumedSlots": { "defaultValue": {"value": "false"} }},
-                        "additionalParameters": "allowed"
-                    },
-                    "semanticObject": "NBS_POC_OVP_SLOTSAVAILABLE",
-                    "action": "display"
                 }
             }
         }
