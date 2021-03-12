@@ -432,7 +432,7 @@
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
             },
-
+ 
             "CardCapacityPlantQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
