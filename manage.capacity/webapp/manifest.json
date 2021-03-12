@@ -71,22 +71,16 @@
                         "parameters": { "ConsumedSlots": { "defaultValue": {"value": "true"} }},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "NBS_POC_OVP_CAPACITY",
-                    "action": "displayConsumed",
-                    "title": "{{AppTitle}}",
-                    "subTitle": "Display Consumed",
-                    "icon": "sap-icon://target-group"
+                    "semanticObject": "NBS_POC_OVP_SLOTSCONSUMED",
+                    "action": "display"
                 },
                 "nbs-poc-ovp-ui-app-displayAvailable-capacity-inbound": {
                     "signature": {
                         "parameters": { "ConsumedSlots": { "defaultValue": {"value": "false"} }},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "NBS_POC_OVP_CAPACITY",
-                    "action": "displayAvailable",
-                    "title": "{{AppTitle}}",
-                    "subTitle": "Display Available",
-                    "icon": "sap-icon://target-group"
+                    "semanticObject": "NBS_POC_OVP_SLOTSAVAILABLE",
+                    "action": "display"
                 }
             }
         }
