@@ -410,7 +410,6 @@
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
             },
- 
             "CardCapacityPlantQuantity": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
@@ -456,7 +455,7 @@
                         {
                             "value": "Next 3 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
-                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#Next3Days"
                         },
                         {
                             "value": "Next 15 Days",
@@ -475,6 +474,108 @@
                         }
                     ],
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardOOSDetPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Details by Periods",
+                    "entitySet": "CardOOSDetPeriods",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 6 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last6Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardOOSDesrcPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Descriptions by Periods",
+                    "entitySet": "CardOOSDesrcPeriods",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 6 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastSixMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastThreeMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardThByTyPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Therapy by types",
+                    "entitySet": "CardThByTyPeriods",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastThreeMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastTenDays",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
@@ -514,8 +615,6 @@
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
             }           
-
-
         }
     },
     "sap.cloud": {
