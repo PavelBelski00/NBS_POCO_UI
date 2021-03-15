@@ -369,7 +369,7 @@
                         {
                             "value": "Next 3 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
-                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#Next3Days"
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
                             "value": "Next 15 Days",
