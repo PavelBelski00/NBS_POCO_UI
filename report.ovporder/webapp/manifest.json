@@ -174,7 +174,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Maximum for a sample of Therapies",
+                    "title": "Maximum Quantity for a sample of Therapies",
                     "entitySet": "CardTherapyMaxQuantity",
                     "showFilterInHeader": true,
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
@@ -189,7 +189,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Maximum for a sample of Therapies",
+                    "title": "Maximum for a sample of Therapies L1&L2 Statuses",
                     "sortBy": "Therapy",
                     "sortOrder": "ascending",
                     "entitySet": "CardTherapyL1L2",
