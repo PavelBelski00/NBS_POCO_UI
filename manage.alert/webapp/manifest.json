@@ -1,6 +1,5 @@
 {
     "_version": "",
- 
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.manage.alert",
         "type": "application",
@@ -59,10 +58,10 @@
                     "subTitle": "",
                     "icon": "sap-icon://alert",
                     "indicatorDataSource": {
-                    "dataSource": "mainService",
-                    "path": "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_ALERT_O2/Alert/$count",
-                    "refresh": 10
-                    }  
+                        "dataSource": "mainService",
+                        "path": "/dynamic_dest/abap-cloud-x11_abap/sap/opu/odata/sap/ZPOCO_UI_ALERT_O2/Alert/$count",
+                        "refresh": 10
+                    }
                 }
             }
         }
@@ -151,7 +150,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|Alert": {
