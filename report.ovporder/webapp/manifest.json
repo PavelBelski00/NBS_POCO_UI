@@ -190,7 +190,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Maximum for a sample of Therapies",
+                    "title": "Quantity of Therapies by Status",
                     "sortBy": "Therapy",
                     "sortOrder": "ascending",
                     "entitySet": "CardTherapyL1L2",
