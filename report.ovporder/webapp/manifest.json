@@ -130,68 +130,33 @@
         "enableLiveFilter": true,
         "considerAnalyticalParameters": false,
         "cards": {
-
-            "CardAveilableSlots": {
+            "CardAvailableSlots": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
                     "title": "Available slots",
-                    "entitySet": "CardAveilableSlots",
+                    "entitySet": "CardAvailableSlots",
                     "showFilterInHeader": true,
                     "tabs": [
-                                {"value": "1st decade",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec1",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                },
-                                {"value": "2nd decade",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec2",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                },
-                                {"value": "3rd decade",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec3",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                }
-                            ],
+                        {
+                            "value": "1st Decade",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec1",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "2nd Decade",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec2",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "3rd Decade",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Dec3",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
-                }
-            },
-            "CardStatusL1Quantity": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Level 1 Order Status",
-                    "sortBy": "StatusL1Name",
-                    "sortOrder": "ascending",
-                    "entitySet": "CardStatusL1Quantity",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartStatusL1Quantity"
-                }
-            },
-            "CardStatusL2Quantity": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Level 2 Order Status",
-                    "sortBy": "StatusL2Name",
-                    "sortOrder": "ascending",
-                    "entitySet": "CardStatusL2Quantity",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartStatusL2Quantity"
-                }
-            },
-            "CardTherapyQuantity": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Order - Therapies",
-                    "entitySet": "CardTherapyQuantity",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartTherapyQuantity"
                 }
             },
             "CardTherapyDateQuantity": {
@@ -230,15 +195,17 @@
                     "entitySet": "CardTherapyL1L2",
                     "showFilterInHeader": true,
                     "tabs": [
-                                {"value": "L1 Status",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL1",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                },
-                                 {"value": "L2 Status",
-                                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL2",
-                                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
-                                }
-                            ],
+                        {
+                            "value": "L1 Status",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL1",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "L2 Status",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#quantityByL2",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
                     "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
@@ -268,6 +235,128 @@
                     "listFlavor": "standard",
                     "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
                 }
+            },          
+            "CardAlertFilter": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Alerts",
+                    "entitySet": "CardAlertFilter",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                }
+            },
+            "CardAlertWIFilter": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Work Items",
+                    "entitySet": "CardAlertWIFilter",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                }
+            },
+            "CardStL1Days": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "L1 Status by Days",
+                    "entitySet": "CardStL1Days",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "CrDate: Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last10Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "CrDate: Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "CrDate: Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "CrDate: Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "D0: Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last10Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "D0: Last 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "D0: Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardStL2Days": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "L2 Status by Days",
+                    "entitySet": "CardStL2Days",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "CrDate: Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastTenDays",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "CrDate: Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "CrDate: Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastThreeMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "CrDate: Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "D0: Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last10Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "D0: Last 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "D0: Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0LastMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
             },
             "CardCapacitySlotsPlantSum": {
                 "model": "mainService",
@@ -275,9 +364,134 @@
                 "settings": {
                     "title": "Plant Capacity",
                     "entitySet": "CardCapacitySlotsPlantSum",
+                    "tabs": [
+                        {
+                            "value": "Next 3 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 1 Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "Next 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsPlant"
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardOOSDetPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Details by Periods",
+                    "entitySet": "CardOOSDetPeriods",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 6 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last6Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Last1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardOOSDesrcPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Descriptions by Periods",
+                    "entitySet": "CardOOSDesrcPeriods",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 6 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastSixMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastThreeMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
+                }
+            },
+            "CardThByTyPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Therapy by types",
+                    "entitySet": "CardThByTyPeriods",
+                    "showFilterInHeader": true,
+                    "tabs": [
+                        {
+                            "value": "Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneYear",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastThreeMonths",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Last Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastOneMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        } ,
+                        {
+                            "value": "Last 10 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#LastTenDays",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }                           
+                    ],
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
             },
             "CardCapacitySlotsDateSum": {
@@ -286,86 +500,34 @@
                 "settings": {
                     "title": "Capacity Data",
                     "entitySet": "CardCapacitySlotsDateSum",
+                    "tabs": [
+                        {
+                            "value": "Next 3 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 15 Days",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next15Days",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Next 1 Month",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next1Month",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },                        
+                        {
+                            "value": "Next 3 Months",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Months",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ],
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartSumSlotsDate"
+                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Default",
+                    "selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Default"
                 }
-            },
-            "CardCapacityPlantQuantity": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Plants",
-                    "listType": "extended",
-                    "entitySet": "CardCapacityPlantQuantity",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartPlantQuantity"
-                }
-            },
-            "CardAlert": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.table",
-                "settings": {
-                    "title": "Alerts",
-                    "entitySet": "CardAlert",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
-                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
-                }
-            },
-            "CardAlertWorkItem": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.table",
-                "settings": {
-                    "title": "Work Items",
-                    "entitySet": "CardAlertWorkItem",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
-                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
-                }
-            },
-            
-            "CardTherapyClCom": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "Orders per Therapy ID",
-                    "entitySet": "CardTherapyClCom",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#ChartTherapyClCom",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartTherapyClCom"
-                }
-            },
-
-
-            "CardOOSDescription": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "OOS Description",
-                    "entitySet": "CardOOSDescription",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#ChartOosDescription",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartOosDescription"
-                }
-            },
-            "CardOOS": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.charts.analytical",
-                "settings": {
-                    "title": "OOS Details",
-                    "listType": "extended",
-                    "entitySet": "CardOOS",
-                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ChartQuanOfCases"
-                }
-            }            
-        
-
+            }           
         }
     },
     "sap.cloud": {
