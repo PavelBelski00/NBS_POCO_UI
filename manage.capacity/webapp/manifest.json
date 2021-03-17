@@ -153,11 +153,7 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false,
-            "flexibleColumnLayout": {
-                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
-                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
-            }
+            "showDraftToggle": false
         },
         "pages": {
             "ListReport|Capacity": {
@@ -173,9 +169,6 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
-                        },
-                        "dataLoadSettings": {
-                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },
