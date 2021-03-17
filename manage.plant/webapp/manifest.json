@@ -1,6 +1,8 @@
 {
     "_version": "",
-    "sap.cloud": {"service": "nbspocovpuiapprouter"},
+    "sap.cloud": {
+        "service": "nbspocovpuiapprouter"
+    },
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.manage.plant",
         "type": "application",
@@ -50,8 +52,10 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-plant-inbound": {
                     "signature": {
-                        "parameters": { "MfgPlantId": {},
-                                        "PlantName":  {} },
+                        "parameters": {
+                            "MfgPlantId": {},
+                            "PlantName": {}
+                        },
                         "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_PLANT",
@@ -152,7 +156,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|Plant": {
@@ -168,6 +176,9 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },

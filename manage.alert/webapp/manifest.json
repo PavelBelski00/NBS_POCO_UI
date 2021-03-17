@@ -52,7 +52,9 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-alert-inbound": {
                     "signature": {
-                        "parameters": { "NvsId": {} },
+                        "parameters": {
+                            "NvsId": {}
+                        },
                         "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_ALERT",
@@ -153,7 +155,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|Alert": {
@@ -169,6 +175,9 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },

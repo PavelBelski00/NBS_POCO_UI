@@ -1,8 +1,5 @@
 {
     "_version": "",
-    "sap.cloud": {
-        "service": "nbspocovpuiapprouter"
-    },
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.manage.label",
         "type": "application",
@@ -153,7 +150,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|Label": {
@@ -169,6 +170,9 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },
@@ -193,5 +197,9 @@
     },
     "sap.platform.hcp": {
         "uri": ""
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "nbspocovpuiapprouter"
     }
 }

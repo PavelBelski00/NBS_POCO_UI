@@ -49,8 +49,10 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-oos-inbound": {
                     "signature": {
-                        "parameters": { "OosId": {},
-                                        "OosDetails": {}},
+                        "parameters": {
+                            "OosId": {},
+                            "OosDetails": {}
+                        },
                         "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_OOS",
@@ -151,7 +153,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|OOSDetails": {
@@ -167,6 +173,9 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },

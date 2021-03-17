@@ -216,7 +216,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.list",
                 "settings": {
-                    "title": "Therapies By Date",
+                    "title": "Therapy Quantity for the Last Year",
                     "entitySet": "CardTherapyDateSum",
                     "listFlavor": "bar",
                     "listType": "extended",
@@ -225,18 +225,7 @@
                     "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
                     "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#TherapyQuantityMax"
                 }
-            },
-            "CardPlant": {
-                "model": "mainService",
-                "template": "sap.ovp.cards.linklist",
-                "settings": {
-                    "title": "Plant List",
-                    "entitySet": "CardPlant",
-                    "listType": "extended",
-                    "listFlavor": "standard",
-                    "headerAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo"
-                }
-            },          
+            },         
             "CardAlertFilter": {
                 "model": "mainService",
                 "template": "sap.ovp.cards.table",
@@ -290,17 +279,17 @@
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
-                            "value": "D0: Last 10 Days",
+                            "value": "Day 0: Last 10 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last10Days",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
-                            "value": "D0: Last 15 Days",
+                            "value": "Day 0: Last 15 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last15Days",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         } ,
                         {
-                            "value": "D0: Last Month",
+                            "value": "Day 0: Last Month",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last1Month",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         }                           
@@ -339,17 +328,17 @@
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
-                            "value": "D0: Last 10 Days",
+                            "value": "Day 0: Last 10 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last10Days",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         },
                         {
-                            "value": "D0: Last 15 Days",
+                            "value": "Day 0: Last 15 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last15Days",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         } ,
                         {
-                            "value": "D0: Last Month",
+                            "value": "Day 0: Last Month",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0LastMonth",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         }                           
@@ -505,7 +494,8 @@
                         {
                             "value": "Next 3 Days",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Next3Days",
-                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                            "resizable": true
                         },
                         {
                             "value": "Next 15 Days",

@@ -1,6 +1,8 @@
 {
     "_version": "",
-    "sap.cloud": {"service": "nbspocovpuiapprouter"},
+    "sap.cloud": {
+        "service": "nbspocovpuiapprouter"
+    },
     "sap.app": {
         "id": "nbs.poc.ovp.ui.app.manage.ttype",
         "type": "application",
@@ -50,8 +52,10 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-ttype-inbound": {
                     "signature": {
-                        "parameters": { "TherapyTypeId": {},
-                                        "TherapyTypeName":{}},
+                        "parameters": {
+                            "TherapyTypeId": {},
+                            "TherapyTypeName": {}
+                        },
                         "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_TTYPE",
@@ -152,7 +156,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|TType": {
@@ -168,6 +176,9 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },

@@ -52,10 +52,12 @@
             </EntityType>
             <EntityType Name="PlantType" sap:label="Manufacturing Plant" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="PlantID"/>
+                    <PropertyRef Name="MfgPlantId"/>
                 </Key>
-                <Property Name="PlantID" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant ID"/>
+                <Property Name="MfgPlantId" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant ID"/>
+                <Property Name="PlantId" Type="Edm.String" MaxLength="1"/>
                 <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
+                <Property Name="PlantImage" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Plant Image"/>
                 <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
@@ -63,9 +65,9 @@
             </EntityType>
             <EntityType Name="TTypeType" sap:label="Manufacturing Plant" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="TherapyTypeID"/>
+                    <PropertyRef Name="TherapyTypeId"/>
                 </Key>
-                <Property Name="TherapyTypeID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Therapy Type ID"/>
+                <Property Name="TherapyTypeId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Therapy Type ID"/>
                 <Property Name="TherapyTypeName" Type="Edm.String" MaxLength="10" sap:label="Therapy Type Name"/>
                 <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
@@ -103,7 +105,7 @@
                             <Collection>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="MfgPlantId"/>
-                                    <PropertyValue Property="ValueListProperty" String="PlantID"/>
+                                    <PropertyValue Property="ValueListProperty" String="MfgPlantId"/>
                                 </Record>
                                 <Record Type="Common.ValueListParameterDisplayOnly">
                                     <PropertyValue Property="ValueListProperty" String=""/>
@@ -119,6 +121,12 @@
                                 </Record>
                                 <Record Type="Common.ValueListParameterDisplayOnly">
                                     <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantImage"/>
                                 </Record>
                                 <Record Type="Common.ValueListParameterDisplayOnly">
                                     <PropertyValue Property="ValueListProperty" String="PlantName"/>
@@ -138,7 +146,7 @@
                             <Collection>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="TherapyTypeId"/>
-                                    <PropertyValue Property="ValueListProperty" String="TherapyTypeID"/>
+                                    <PropertyValue Property="ValueListProperty" String="TherapyTypeId"/>
                                 </Record>
                                 <Record Type="Common.ValueListParameterDisplayOnly">
                                     <PropertyValue Property="ValueListProperty" String=""/>
@@ -178,10 +186,10 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="cds_zpoco_ui_label.PlantType/PlantID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zpoco_ui_label.PlantType/MfgPlantId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
             </Annotations>
-            <Annotations Target="cds_zpoco_ui_label.TTypeType/TherapyTypeID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zpoco_ui_label.TTypeType/TherapyTypeId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
             </Annotations>
             <Annotations Target="cds_zpoco_ui_label.cds_zpoco_ui_label_Entities/Label" xmlns="http://docs.oasis-open.org/odata/ns/edm">
