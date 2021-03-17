@@ -49,7 +49,9 @@
             "inbounds": {
                 "nbs-poc-ovp-ui-app-manage-alert-inbound": {
                     "signature": {
-                        "parameters": {"NvsId":{}},
+                        "parameters": {
+                            "NvsId": {}
+                        },
                         "additionalParameters": "ignored"
                     },
                     "semanticObject": "NBS_POC_OVP_ALERT",
@@ -170,6 +172,9 @@
                             "dateSettings": {
                                 "useDateRange": true
                             }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
                         }
                     }
                 },
