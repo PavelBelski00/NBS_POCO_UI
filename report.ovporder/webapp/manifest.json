@@ -292,6 +292,11 @@
                             "value": "Day 0: Last Month",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last1Month",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Day 0: Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0Last1Year",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         }                           
                     ],
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
@@ -340,6 +345,11 @@
                         {
                             "value": "Day 0: Last Month",
                             "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0LastMonth",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Day 0: Last Year",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#D0LastYear",
                             "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
                         }                           
                     ],
