@@ -1,0 +1,44 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZPOCO_UI_ALP_CAPACITY_O2/$metadata">
+        <edmx:Include Namespace="cds_zpoco_ui_alp_capacity"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="nbs.poc.ovp.ui.app">
+            <Annotations Target="cds_zpoco_ui_alp_capacity.ALPCapacityType/TherapyTypeId">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPCapacity"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByTherapyType"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="TherapyTypeId"/>
+                                    <PropertyValue Property="ValueListProperty" String="TherapyTypeId"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_alp_capacity.ALPCapacityType/ConsumedSlots">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPCapacity"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByConsumedSlots"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ConsumedSlots"/>
+                                    <PropertyValue Property="ValueListProperty" String="ConsumedSlots"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

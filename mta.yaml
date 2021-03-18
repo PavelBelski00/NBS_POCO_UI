@@ -98,6 +98,14 @@ modules:
       - nbspocovpuiappreportalporder.zip
       name: nbspocovpuiappreportalporder
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalpcapacity.zip
+      name: nbspocovpuiappreportalpcapacity
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalplabel.zip
+      name: nbspocovpuiappreportalplabel
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -231,6 +239,26 @@ modules:
 - name: nbspocovpuiappreportalporder
   type: html5
   path: report.alporder
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportalpcapacity
+  type: html5
+  path: report.alpcapacity
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportalplabel
+  type: html5
+  path: report.alplabel
   build-parameters:
     build-result: dist
     builder: custom
