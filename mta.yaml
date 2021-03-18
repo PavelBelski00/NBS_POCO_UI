@@ -94,6 +94,10 @@ modules:
       - nbspocovpuiappmanageoos.zip
       name: nbspocovpuiappmanageoos
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalporder.zip
+      name: nbspocovpuiappreportalporder
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -217,6 +221,16 @@ modules:
 - name: nbspocovpuiappmanageoos
   type: html5
   path: manage.oos
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportalporder
+  type: html5
+  path: report.alporder
   build-parameters:
     build-result: dist
     builder: custom
