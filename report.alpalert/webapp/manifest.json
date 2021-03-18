@@ -44,6 +44,21 @@
         "sourceTemplate": {
             "id": "ui5template.smartTemplate",
             "version": "1.40.12"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "nbs-poc-ovp-ui-app-report-alpalert-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "NBS_POC_OVP_ALERT",
+                    "action": "analytics",
+                    "title": "{{AppTitle}}",
+                    "subTitle": "",
+                    "icon": "sap-icon://filter-analytics"
+                }
+            }
         }
     },
     "sap.ui": {
