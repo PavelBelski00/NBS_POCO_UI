@@ -1,7 +1,7 @@
 {
     "_version": "",
     "sap.app": {
-        "id": "nbs.poc.ovp.ui.app.report.alpalert",
+        "id": "nbs.poc.ovp.ui.app.report.alpalertwi",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -14,22 +14,22 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_O2/",
+                "uri": "/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_WI_O2/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
-                        "ZPOCO_UI_ALP_ALERT_O2_VAN",
+                        "ZPOCO_UI_ALP_ALERT_WI_O2_VAN",
                         "annotation"
                     ],
                     "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
             },
-            "ZPOCO_UI_ALP_ALERT_O2_VAN": {
-                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_ALP_ALERT_O2_VAN',Version='0001')/$value/",
+            "ZPOCO_UI_ALP_ALERT_WI_O2_VAN": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_ALP_ALERT_WI_O2_VAN',Version='0001')/$value/",
                 "type": "ODataAnnotation",
                 "settings": {
-                    "localUri": "localService/ZPOCO_UI_ALP_ALERT_O2_VAN.xml"
+                    "localUri": "localService/ZPOCO_UI_ALP_ALERT_WI_O2_VAN.xml"
                 }
             },
             "annotation": {
@@ -47,16 +47,16 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "nbs-poc-ovp-ui-app-report-alpalert-inbound": {
+                "nbs-poc-ovp-ui-app-report-alpalertwi-inbound": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "NBS_POC_OVP_ALERT",
+                    "semanticObject": "NBS_POC_OVP_ALERT_WI",
                     "action": "analytics",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": "sap-icon://filter-analytics"
+                    "icon": ""
                 }
             }
         }
@@ -111,13 +111,13 @@
                 "type": "sap.ui.model.resource.ResourceModel",
                 "uri": "i18n/i18n.properties"
             },
-            "i18n|sap.suite.ui.generic.template.ListReport|Alert": {
+            "i18n|sap.suite.ui.generic.template.ListReport|AlpAlertWI": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "i18n/ListReport/Alert/i18n.properties"
+                "uri": "i18n/ListReport/AlpAlertWI/i18n.properties"
             },
-            "i18n|sap.suite.ui.generic.template.ObjectPage|Alert": {
+            "i18n|sap.suite.ui.generic.template.ObjectPage|AlpAlertWI": {
                 "type": "sap.ui.model.resource.ResourceModel",
-                "uri": "i18n/ObjectPage/Alert/i18n.properties"
+                "uri": "i18n/ObjectPage/AlpAlertWI/i18n.properties"
             },
             "": {
                 "dataSource": "mainService",
@@ -145,15 +145,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false,
-            "flexibleColumnLayout": {
-                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
-                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
-            }
+            "showDraftToggle": false
         },
         "pages": {
-            "AnalyticalListPage|Alert": {
-                "entitySet": "Alert",
+            "AnalyticalListPage|AlpAlertWI": {
+                "entitySet": "AlpAlertWI",
                 "component": {
                     "name": "sap.suite.ui.generic.template.AnalyticalListPage",
                     "list": true,
@@ -169,8 +165,8 @@
                     }
                 },
                 "pages": {
-                    "ObjectPage|Alert": {
-                        "entitySet": "Alert",
+                    "ObjectPage|AlpAlertWI": {
+                        "entitySet": "AlpAlertWI",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage"

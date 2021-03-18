@@ -106,6 +106,18 @@ modules:
       - nbspocovpuiappreportalplabel.zip
       name: nbspocovpuiappreportalplabel
       target-path: resources/
+    - artifacts:
+      - reportalpalertwi.zip
+      name: reportalpalertwi
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalpalert.zip
+      name: nbspocovpuiappreportalpalert
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalpalertwi.zip
+      name: nbspocovpuiappreportalpalertwi
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -259,6 +271,36 @@ modules:
 - name: nbspocovpuiappreportalplabel
   type: html5
   path: report.alplabel
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: reportalpalertwi
+  type: html5
+  path: report.alpalertwi
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportalpalert
+  type: html5
+  path: report.alpalert
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportalpalertwi
+  type: html5
+  path: report.alpalertwi
   build-parameters:
     build-result: dist
     builder: custom

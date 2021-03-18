@@ -3,8 +3,8 @@
 <!-- Copyright (c) 2015 SAP AG, All Rights Reserved -->
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{appTitle}}</title>
 
 	<!-- Bootstrap the unified shell in sandbox mode for standalone usage.
@@ -44,9 +44,9 @@
 			},
 			applications: {
 				"masterDetail-display": {
-					title: "Alerts Analytics (Self-service)",
-					description: "Alerts Analytics (Self-service)",
-					additionalInformation: "SAPUI5.Component=nbs.poc.ovp.ui.app.report.alpalert",
+					title: "Work Items Analytics (Self-service)",
+					description: "Work Items Analytics (Self-service)",
+					additionalInformation: "SAPUI5.Component=nbs.poc.ovp.ui.app.report.alpalertwi",
 					applicationType: "URL",
 					url: "../"
 				}
@@ -58,20 +58,25 @@
 
 	<!-- Bootstrap the UI5 core library -->
 	<script id="sap-ui-bootstrap"
-		src="/resources/sap-ui-core.js"
-		data-sap-ui-libs="sap.m, sap.ushell, sap.ui.core, sap.f, sap.ui.comp, sap.ui.table, sap.suite.ui.generic.template, sap.ui.generic.app"
-		data-sap-ui-theme="sap_fiori_3"
-		data-sap-ui-compatVersion="edge"
-		data-sap-ui-flexibilityServices='[{"applyConnector":"nbs/poc/ovp/ui/app/report/alpalert/test/changes_loader", "custom":true}]'
-		data-sap-ui-language="en"
-		data-sap-ui-resourceroots='{"nbs.poc.ovp.ui.app.report.alpalert": "../"}'
-		data-sap-ui-frameOptions="allow"> // NON-SECURE setting for testing environment
-		</script>
+			src="/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m, sap.ushell, sap.ui.core, sap.f, sap.ui.comp, sap.ui.table, sap.suite.ui.generic.template, sap.ui.generic.app"
+			data-sap-ui-theme="sap_fiori_3"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-flexibilityServices='[{"applyConnector":"nbs/poc/ovp/ui/app/report/alpalertwi/test/changes_loader", "custom":true}]'
+			data-sap-ui-language="en"
+			data-sap-ui-resourceroots='{"nbs.poc.ovp.ui.app.report.alpalertwi": "../"}'
+			data-sap-ui-frameOptions="allow"> // NON-SECURE setting for testing environment
+	</script>
 
 	<script type="text/javascript">
-		sap.ui.getCore().attachInit(function () {
-			// initialize the ushell sandbox component
-			sap.ushell.Container.createRenderer().placeAt("content");
+		sap.ui.getCore().attachInit(function() {
+			sap.ui.require(["nbs/poc/ovp/ui/app/report/alpalertwi/localService/mockserver"],
+				function(server) {
+					// set up test service for local testing
+					server.init();
+					// initialize the ushell sandbox component
+					sap.ushell.Container.createRenderer().placeAt("content");
+			});
 		});
 	</script>
 	<!-- relevant for version < 1.78.0 only -->

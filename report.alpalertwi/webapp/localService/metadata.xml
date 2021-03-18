@@ -28,25 +28,25 @@
         <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
     </edmx:Reference>
     <edmx:DataServices m:DataServiceVersion="2.0">
-        <Schema Namespace="cds_zpoco_ui_alp_alert" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-            <EntityType Name="AlertType" sap:semantics="aggregate" sap:label="ALP Alert" sap:content-version="1">
+        <Schema Namespace="cds_zpoco_ui_alp_alert_wi" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="AlpAlertWIType" sap:semantics="aggregate" sap:label="ALP Alert WI" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="ID"/>
                 </Key>
                 <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="UpdatedDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Updated Date"/>
                 <Property Name="OrderNumber" Type="Edm.String" MaxLength="8" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="NVS ID"/>
-                <Property Name="AlertMessage" Type="Edm.String" MaxLength="150" sap:aggregation-role="dimension" sap:label="Alert Message"/>
-                <Property Name="AlertDay" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension"/>
-                <Property Name="AlertMonth" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension"/>
-                <Property Name="AlertYear" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension"/>
-                <Property Name="AlertQuarter" Type="Edm.Byte" sap:aggregation-role="dimension"/>
+                <Property Name="AlertWIMessage" Type="Edm.String" MaxLength="150" sap:aggregation-role="dimension" sap:label="Alert Message"/>
+                <Property Name="AlertWIDay" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension"/>
+                <Property Name="AlertWIMonth" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension"/>
+                <Property Name="AlertWIYear" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension"/>
+                <Property Name="AlertWIQuarter" Type="Edm.Byte" sap:aggregation-role="dimension"/>
                 <Property Name="OrdersQuantity" Type="Edm.Int32" sap:aggregation-role="measure" sap:filterable="false"/>
             </EntityType>
-            <EntityContainer Name="cds_zpoco_ui_alp_alert_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="Alert" EntityType="cds_zpoco_ui_alp_alert.AlertType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            <EntityContainer Name="cds_zpoco_ui_alp_alert_wi_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="AlpAlertWI" EntityType="cds_zpoco_ui_alp_alert_wi.AlpAlertWIType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
             </EntityContainer>
-            <Annotations Target="cds_zpoco_ui_alp_alert.cds_zpoco_ui_alp_alert_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.cds_zpoco_ui_alp_alert_wi_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
                 <Annotation Term="Aggregation.ApplySupported">
                     <Record>
@@ -61,7 +61,7 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="cds_zpoco_ui_alp_alert.cds_zpoco_ui_alp_alert_Entities/Alert" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.cds_zpoco_ui_alp_alert_wi_Entities/AlpAlertWI" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.FilterRestrictions">
                     <Record>
                         <PropertyValue Property="NonFilterableProperties">
@@ -82,16 +82,16 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="cds_zpoco_ui_alp_alert.AlertType/OrdersQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
-            <Annotations Target="cds_zpoco_ui_alp_alert.cds_zpoco_ui_alp_alert_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.AlpAlertWIType/OrdersQuantity" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.cds_zpoco_ui_alp_alert_wi_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
                     <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
                         <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
                     </Record>
                 </Annotation>
             </Annotations>
-            <atom:link rel="self" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="self" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_WI_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_WI_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

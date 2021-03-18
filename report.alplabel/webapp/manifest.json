@@ -145,7 +145,11 @@
         "settings": {
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "AnalyticalListPage|Label": {
@@ -154,14 +158,20 @@
                     "name": "sap.suite.ui.generic.template.AnalyticalListPage",
                     "list": true,
                     "settings": {
-                        "condensedTableLayout": true,
-                        "showGoButtonOnFilterBar": true,
-                        "tableType": "ResponsiveTable",
-                        "multiSelect": false,
                         "qualifier": "Default",
                         "autoHide": true,
+                        "tableSettings": {
+                            "selectionLimit": 200
+                        },
+                        "condensedTableLayout": true,
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
+                        },
+                        "showGoButtonOnFilterBar": true,
                         "smartVariantManagement": false,
-                        "keyPerformanceIndicators": {}
+                        "chartSettings": {
+                            "showDataLabel": true
+                        }
                     }
                 },
                 "pages": {

@@ -44,9 +44,9 @@
 			},
 			applications: {
 				"masterDetail-display": {
-					title: "Alert analytic",
-					description: "A Fiori application.",
-					additionalInformation: "SAPUI5.Component=report.alpalert",
+					title: "Alerts Analytics (Self-service)",
+					description: "Alerts Analytics (Self-service)",
+					additionalInformation: "SAPUI5.Component=nbs.poc.ovp.ui.app.report.alpalert",
 					applicationType: "URL",
 					url: "../"
 				}
@@ -62,15 +62,15 @@
 			data-sap-ui-libs="sap.m, sap.ushell, sap.ui.core, sap.f, sap.ui.comp, sap.ui.table, sap.suite.ui.generic.template, sap.ui.generic.app"
 			data-sap-ui-theme="sap_fiori_3"
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-flexibilityServices='[{"applyConnector":"report/alpalert/test/changes_loader", "custom":true}]'
+			data-sap-ui-flexibilityServices='[{"applyConnector":"nbs/poc/ovp/ui/app/report/alpalert/test/changes_loader", "custom":true}]'
 			data-sap-ui-language="en"
-			data-sap-ui-resourceroots='{"report.alpalert": "../"}'
+			data-sap-ui-resourceroots='{"nbs.poc.ovp.ui.app.report.alpalert": "../"}'
 			data-sap-ui-frameOptions="allow"> // NON-SECURE setting for testing environment
 	</script>
 
 	<script type="text/javascript">
 		sap.ui.getCore().attachInit(function() {
-			sap.ui.require(["report/alpalert/localService/mockserver"],
+			sap.ui.require(["nbs/poc/ovp/ui/app/report/alpalert/localService/mockserver"],
 				function(server) {
 					// set up test service for local testing
 					server.init();

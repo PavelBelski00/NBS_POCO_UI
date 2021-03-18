@@ -1,24 +1,24 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu Mar 18 2021 16:03:24 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Thu Mar 18 2021 16:31:30 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori|
 |**App Generator Version**<br>1.1.4|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Floorplan Used**<br>Analytical List Page|
 |**Service Type**<br>SAP System (ABAP Environment on SAP Business Technology Platform)|
-|**Service URL**<br>https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_O2/
-|**Module Name**<br>report.alpalert|
-|**Application Title**<br>Alerts Analytics (Self-service)|
+|**Service URL**<br>https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ALP_ALERT_WI_O2/
+|**Module Name**<br>report.alpalertwi|
+|**Application Title**<br>Work Items Analytics (Self-service)|
 |**Namespace**<br>nbs.poc.ovp.ui.app|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>Latest|
 |**Enable Telemetry**<br>True|
-|**Main Entity**<br>Alert|
+|**Main Entity**<br>AlpAlertWI|
 
-## report.alpalert
+## report.alpalertwi
 
-Alerts Analytics (Self-service)
+Work Items Analytics (Self-service)
 
 ### Starting the generated app
 
