@@ -548,6 +548,250 @@
             "env": {
                 "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alporder\"}"
             }
+        },
+        {
+            "name": "Start report.alplabel",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/report.alplabel",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alplabel\"}"
+            }
+        },
+        {
+            "name": "Start report.alplabel Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alplabel",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-mock"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alplabel\"}"
+            }
+        },
+        {
+            "name": "Start report.alplabel Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alplabel",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-local"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alplabel\"}"
+            }
+        },
+        {
+            "name": "Start report.alpcapacity",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/report.alpcapacity",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpcapacity\"}"
+            }
+        },
+        {
+            "name": "Start report.alpcapacity Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alpcapacity",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-mock"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpcapacity\"}"
+            }
+        },
+        {
+            "name": "Start report.alpcapacity Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alpcapacity",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-local"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpcapacity\"}"
+            }
+        },
+        {
+            "name": "Start report.alpalert",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/report.alpalert",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpalert\"}"
+            }
+        },
+        {
+            "name": "Start report.alpalert Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alpalert",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-mock"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpalert\"}"
+            }
+        },
+        {
+            "name": "Start report.alpalert Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alpalert",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-local"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpalert\"}"
+            }
+        },
+        {
+            "name": "Start report.alpalertwi",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/report.alpalertwi",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpalertwi\"}"
+            }
+        },
+        {
+            "name": "Start report.alpalertwi Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alpalertwi",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-mock"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpalertwi\"}"
+            }
+        },
+        {
+            "name": "Start report.alpalertwi Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/report.alpalertwi",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-local"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/NBS_POCO_UI/report.alpalertwi\"}"
+            }
         }
     ],
     "compounds": [],
