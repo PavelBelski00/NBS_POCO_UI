@@ -24,7 +24,6 @@
                 </Annotation>
             </Annotations>
             <Annotations Target="cds_zpoco_ui_alp_alert.AlertType/AlertQuarter">
-                
                 <Annotation Term="Common.ValueList">
                     <Record Type="Common.ValueListType">
                         <PropertyValue Property="CollectionPath" String="Alert"/>
