@@ -94,6 +94,10 @@ modules:
       - nbspocovpuiappmanageoos.zip
       name: nbspocovpuiappmanageoos
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalporder.zip
+      name: nbspocovpuiappreportalporder
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -224,12 +228,31 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
+- name: nbspocovpuiappreportalporder
+  type: html5
+  path: report.alporder
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
 resources:
 - name: nbs-poc-ovp-ui-app-destination-service
   type: org.cloudfoundry.managed-service
   parameters:
     config:
       HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
       version: 1.0.0
     service: destination
     service-name: nbs-poc-ovp-ui-app-destination-service
