@@ -181,6 +181,11 @@
                         },
                         "showGoButtonOnFilterBar": true,
                         "smartVariantManagement": false,
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true
+                            }
+                        },
                         "chartSettings": {
                             "showDataLabel": true
                         },
@@ -189,7 +194,7 @@
                                 "model": "KPIModel",
                                 "entitySet": "ALPOrder",
                                 "qualifier": "KPINvsIdQuantiybyYear"
-                            }                        
+                            }
                         }
                     }
                 },
