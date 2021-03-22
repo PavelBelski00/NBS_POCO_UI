@@ -7,6 +7,54 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="nbs.poc.ovp.ui.app">
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/Day0Year">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByYear">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByYear"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Day0Year"/>
+                                    <PropertyValue Property="ValueListProperty" String="Day0Year"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations> 
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/Day0Quarter">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByQuarter">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByQuarter"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Day0Quarter"/>
+                                    <PropertyValue Property="ValueListProperty" String="Day0Quarter"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations> 
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/Day0Month">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByMonth">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByMonth"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Day0Month"/>
+                                    <PropertyValue Property="ValueListProperty" String="Day0Month"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>                                
             <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/StatusL1Id">
                 <Annotation Term="Common.ValueList" Qualifier ="FilterByStatusL1">
                     <Record Type="Common.ValueListType">

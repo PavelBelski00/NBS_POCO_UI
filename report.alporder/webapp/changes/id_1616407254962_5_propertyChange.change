@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1616407254962_5_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "nbs.poc.ovp.ui.app.report.alporder",
+    "packageName": "",
+    "content": {
+        "property": "showLegendButton",
+        "newValue": true
+    },
+    "selector": {
+        "id": "nbs.poc.ovp.ui.app.report.alporder::sap.suite.ui.generic.template.AnalyticalListPage.view.AnalyticalListPage::ALPOrder--chart",
+        "idIsLocal": false,
+        "type": "sap.ui.comp.smartchart.SmartChart"
+    },
+    "layer": "VENDOR",
+    "texts": {},
+    "namespace": "apps/nbs.poc.ovp.ui.app.report.alporder/changes/",
+    "projectId": "nbs.poc.ovp.ui.app.report.alporder",
+    "creation": 1616407254962,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "latest",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "1.0.0",
+        "to": "1.0.0",
+        "creation": "1.0.0"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}
