@@ -194,12 +194,22 @@
                                 "model": "KPIModel",
                                 "entitySet": "ALPOrder",
                                 "qualifier": "KPINvsIdQuantiybyYear"
+                            },
+                            "KPITTClinicalQuantity": {
+                                "model": "KPIModel",
+                                "entitySet": "ALPOrder",
+                                "qualifier": "KPITTClinicalQuantity"
+                            },
+                            "KPITTCommercialQuantity": {
+                                "model": "KPIModel",
+                                "entitySet": "ALPOrder",
+                                "qualifier": "KPITTCommercialQuantity"
                             }
                         }
                     }
                 },
                 "pages": {
-                    "ObjectPage|ALPOrder": {
+                        "ObjectPage|ALPOrder": {
                         "entitySet": "ALPOrder",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {

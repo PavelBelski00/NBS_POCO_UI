@@ -179,6 +179,12 @@
                         },
                         "showGoButtonOnFilterBar": true,
                         "smartVariantManagement": false,
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true,
+                                "exclude": false
+                            }
+                        },
                         "keyPerformanceIndicators": {
                             "OrdersQuantity": {
                                 "model": "KPIModel",
