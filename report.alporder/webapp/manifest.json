@@ -173,7 +173,7 @@
                         "qualifier": "Default",
                         "autoHide": true,
                         "tableSettings": {
-                            "selectionLimit": 200
+                            "selectionLimit": 300
                         },
                         "condensedTableLayout": true,
                         "dataLoadSettings": {
