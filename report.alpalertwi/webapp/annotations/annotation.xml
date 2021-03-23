@@ -13,6 +13,98 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="nbs.poc.ovp.ui.app">
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.AlpAlertWIType/AlertWIMessage">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="AlpAlertWI"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByAlertMessages"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AlertWIMessage"/>
+                                    <PropertyValue Property="ValueListProperty" String="AlertWIMessage"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            
+            
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.AlpAlertWIType/AlertWIMonth">
+                
+                <Annotation Term="Common.ValueList" Qualifier ="pvFilterByAlertMonth">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="AlpAlertWI"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByAlertMonth"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AlertWIMonth"/>
+                                    <PropertyValue Property="ValueListProperty" String="AlertWIMonth"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="CalendarMonth"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AlertWIMonth"/>
+                                    <PropertyValue Property="ValueListProperty" String="CalendarMonthId"/>
+                                </Record>
+                                
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AlertWIMonth"/>
+                                    <PropertyValue Property="ValueListProperty" String="CalendarMonthName"/>
+                                </Record>
+
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                
+            </Annotations>
+            
+            
+            <Annotations Target="cds_zpoco_ui_alp_alert_wi.AlpAlertWIType/AlertWIQuarter">
+                
+                <Annotation Term="Common.ValueList" Qualifier ="pvAlertQuarter">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="AlpAlertWI"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvAlertQuarter"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AlertWIQuarter"/>
+                                    <PropertyValue Property="ValueListProperty" String="AlertWIQuarter"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="CalendarQuarter"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="AlertWIQuarter"/>
+                                    <PropertyValue Property="ValueListProperty" String="CalendarQuarter"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+            </Annotations>
+
         </Schema>
+
     </edmx:DataServices>
 </edmx:Edmx>

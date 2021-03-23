@@ -130,8 +130,21 @@
                         "sap-value-list": "none"
                     }
                 }
+            },
+            "KPIModel": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
             }
         },
+
         "extends": {
             "extensions": {}
         },
@@ -160,14 +173,38 @@
                     "settings": {
                         "qualifier": "Default",
                         "autoHide": true,
+                        "tableSettings": {
+                            "selectionLimit": 200
+                        },
                         "condensedTableLayout": true,
                         "dataLoadSettings": {
                             "loadDataOnAppLaunch": "ifAnyFilterExist"
                         },
                         "showGoButtonOnFilterBar": true,
-                        "smartVariantManagement": false
+                        "smartVariantManagement": false,
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true
+                            }
+                        },
+                        "chartSettings": {
+                            "showDataLabel": true
+                        },
+                        "keyPerformanceIndicators": {
+                            "KPIConsumedQuantityByYear": {
+                                "model": "KPIModel",
+                                "entitySet": "ALPCapacity",
+                                "qualifier": "KPIConsumedQuantityByYear"
+                            },
+                            "KPIAvailableQuantityByYear": {
+                                "model": "KPIModel",
+                                "entitySet": "ALPCapacity",
+                                "qualifier": "KPIAvailableQuantityByYear"
+                            }
+                        }
                     }
                 },
+                    
                 "pages": {
                     "ObjectPage|ALPCapacity": {
                         "entitySet": "ALPCapacity",

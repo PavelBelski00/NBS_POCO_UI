@@ -13,6 +13,154 @@
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="nbs.poc.ovp.ui.app">
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/Day0Year">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByYear">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByYear"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Day0Year"/>
+                                    <PropertyValue Property="ValueListProperty" String="Day0Year"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations> 
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/Day0Quarter">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByQuarter">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByQuarter"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Day0Quarter"/>
+                                    <PropertyValue Property="ValueListProperty" String="Day0Quarter"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations> 
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/Day0Month">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByMonth">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByMonth"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Day0Month"/>
+                                    <PropertyValue Property="ValueListProperty" String="Day0Month"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>                                
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/StatusL1Id">
+                <Annotation Term="Common.ValueList" Qualifier ="FilterByStatusL1">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByStatusL1"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatusL1Id"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL1Id"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="StatusL1"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatusL1Id"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL1Id"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatusL1Name"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL1Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/StatusL2Id">
+                <Annotation Term="Common.ValueList" Qualifier="FilterByStatusL2">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByStatusL2"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatusL2Id"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL2Id"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="StatusL2"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatusL2Id"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL2Id"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatusL2Name"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL2Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_alp_order.ALPOrderType/CountryId">
+                <Annotation Term="Common.ValueList" Qualifier="FilterByCountry">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="ALPOrder"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByCountry"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CountryId"/>
+                                    <PropertyValue Property="ValueListProperty" String="CountryId"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Country"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CountryId"/>
+                                    <PropertyValue Property="ValueListProperty" String="CountryId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CountryName"/>
+                                    <PropertyValue Property="ValueListProperty" String="CountryName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
         </Schema>
+
     </edmx:DataServices>
 </edmx:Edmx>

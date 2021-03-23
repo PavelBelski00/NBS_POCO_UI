@@ -130,6 +130,19 @@
                         "sap-value-list": "none"
                     }
                 }
+            },
+            "KPIModel": {
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "useBatch": true,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                },
+                "dataSource": "mainService",
+                "preload": true
             }
         },
         "extends": {
@@ -162,12 +175,27 @@
                         "autoHide": true,
                         "condensedTableLayout": true,
                         "dataLoadSettings": {
-                            "loadDataOnAppLaunch": "ifAnyFilterExist"
+                            "loadDataOnAppLaunch": "always"
                         },
                         "showGoButtonOnFilterBar": true,
-                        "smartVariantManagement": false
+                        "smartVariantManagement": false,
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true,
+                                "exclude": false
+                            }
+                        },
+                        "keyPerformanceIndicators": {
+                            "OrdersQuantity": {
+                                "model": "KPIModel",
+                                "entitySet": "Alert",
+                                "qualifier": "KPIOrdersQuantity",
+                                "filterable": false
+                            }
+                        }
                     }
                 },
+
                 "pages": {
                     "ObjectPage|Alert": {
                         "entitySet": "Alert",

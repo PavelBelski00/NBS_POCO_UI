@@ -130,8 +130,22 @@
                         "sap-value-list": "none"
                     }
                 }
+            },
+            "KPIModel": {
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "useBatch": true,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                },
+                "dataSource": "mainService",
+                "preload": true
             }
         },
+
         "extends": {
             "extensions": {}
         },
@@ -162,12 +176,27 @@
                         "autoHide": true,
                         "condensedTableLayout": true,
                         "dataLoadSettings": {
-                            "loadDataOnAppLaunch": "ifAnyFilterExist"
+                            "loadDataOnAppLaunch": "always"
                         },
                         "showGoButtonOnFilterBar": true,
-                        "smartVariantManagement": false
+                        "smartVariantManagement": false,
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true,
+                                "exclude": false
+                            }
+                        },
+                        "keyPerformanceIndicators": {
+                            "OrdersQuantity": {
+                                "model": "KPIModel",
+                                "entitySet": "AlpAlertWI",
+                                "qualifier": "KPIOrdersQuantity",
+                                "filterable": false
+                            }
+                        }
                     }
                 },
+
                 "pages": {
                     "ObjectPage|AlpAlertWI": {
                         "entitySet": "AlpAlertWI",
