@@ -177,7 +177,7 @@
                         },
                         "condensedTableLayout": true,
                         "dataLoadSettings": {
-                            "loadDataOnAppLaunch": "ifAnyFilterExist"
+                            "loadDataOnAppLaunch": "always"
                         },
                         "showGoButtonOnFilterBar": true,
                         "smartVariantManagement": false,
