@@ -204,6 +204,16 @@
                                 "model": "KPIModel",
                                 "entitySet": "ALPOrder",
                                 "qualifier": "KPITTCommercialQuantity"
+                            },
+                            "KPIOrdersQuantity": {
+                                "model": "KPIModel",
+                                "entitySet": "ALPAlert",
+                                "qualifier": "KPIOrdersQuantity"
+                            },
+                            "KPIOrdersQuantityWI": {
+                                "model": "KPIModel",
+                                "entitySet": "ALPAlertWorkItem",
+                                "qualifier": "KPIOrdersQuantityWI"
                             }
                         }
                     }

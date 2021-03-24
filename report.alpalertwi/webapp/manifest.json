@@ -189,7 +189,7 @@
                             "OrdersQuantity": {
                                 "model": "KPIModel",
                                 "entitySet": "AlpAlertWI",
-                                "qualifier": "KPIOrdersQuantity",
+                                "qualifier": "KPIOrdersQuantityWI",
                                 "filterable": false
                             }
                         }

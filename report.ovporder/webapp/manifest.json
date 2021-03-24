@@ -231,7 +231,7 @@
                 "template": "sap.ovp.cards.table",
                 "settings": {
                     "title": "Alerts",
-                    "entitySet": "CardAlertFilter",
+                    "entitySet": "CardAlertWIFilter",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
                     "selectionPresentationAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant",
