@@ -54,30 +54,19 @@
 	<script id="sap-ui-bootstrap"
 			src="/resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m, sap.f, sap.ushell, sap.ui.core, sap.ui.layout, sap.ui.generic.app, sap.ui.comp, sap.suite.ui.generic.template, sap.ovp, sap.ui.rta"
+			data-sap-ui-async="true"
+			data-sap-ui-preload="async"
 			data-sap-ui-theme="sap_fiori_3"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-resourceroots='{"nbs.poc.ovp.ui.app.report.ovporder": "../"}'
 			data-sap-ui-frameOptions="allow"> // NON-SECURE setting for testing environment
 	</script>
+    <script src="../utils/locate-reuse-libs.js"
+            data-sap-ui-manifest-uri="../manifest.json"
+            data-sap-ui-componentName="nbs.poc.ovp.ui.app.report.ovporder"
+            data-sap-ui-use-mockserver="true">
+    </script>
 	<script src="changes_preview.js"></script>
-	<script type="text/javascript">
-		sap.ui.getCore().attachInit(function() {
-			//Fake LREP
-			jQuery.sap.require("sap.ui.fl.FakeLrepConnector");
-			sap.ui.fl.FakeLrepConnector.enableFakeConnector("fakeLRep.json");
-			var sNamespace = "nbs.poc.ovp.ui.app.report.ovporder";
-			sNamespace = sNamespace.replace(/\./g, "/");
-			sap.ui.require([
-				sNamespace + "/localService/mockserver"
-			], function (server) {
-				// set up test service for local testing
-				server.init();
-
-				// initialize the ushell sandbox component
-				sap.ushell.Container.createRenderer().placeAt("content");
-			});
-		});
-	</script>
 </head>
 <!-- UI Content -->
 <body class="sapUiBody" id="content">

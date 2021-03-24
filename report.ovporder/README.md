@@ -1,9 +1,9 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Tue Mar 09 2021 12:30:41 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Wed Mar 24 2021 12:37:07 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori|
-|**App Generator Version**<br>1.1.4|
+|**App Generator Version**<br>1.1.5|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Floorplan Used**<br>Overview Page|
 |**Service Type**<br>SAP System (ABAP Environment on SAP Business Technology Platform)|

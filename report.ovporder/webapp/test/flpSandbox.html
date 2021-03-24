@@ -58,17 +58,17 @@
 	<script id="sap-ui-bootstrap"
 			src="/resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m, sap.f, sap.ushell, sap.ui.core, sap.ui.layout, sap.ui.generic.app, sap.ui.comp, sap.suite.ui.generic.template, sap.ovp, sap.ui.rta"
+			data-sap-ui-async="true"
+			data-sap-ui-preload="async"
 			data-sap-ui-theme="sap_fiori_3"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-language="en"
 			data-sap-ui-resourceroots='{"nbs.poc.ovp.ui.app.report.ovporder": "../"}'
 			data-sap-ui-frameOptions="allow"> // NON-SECURE setting for testing environment
 	</script>
-	<script type="text/javascript">
-		sap.ui.getCore().attachInit(function() {
-			sap.ushell.Container.createRenderer().placeAt("content");
-		});
-	</script>
+    <script src="../utils/locate-reuse-libs.js"
+            data-sap-ui-manifest-uri="../manifest.json">
+    </script>
 		<style>
 			.sapOvpDashboardLayoutItem .sapUiComponentContainer, .sapOvpCardContentContainer {
 				background-color: transparent !important;
