@@ -59,7 +59,7 @@
 	<!-- Bootstrap the UI5 core library -->
 	<script id="sap-ui-bootstrap"
 		src="/resources/sap-ui-core.js"
-		data-sap-ui-libs="sap.m, sap.ushell, sap.ui.core, sap.f, sap.ui.comp, sap.ui.table, sap.suite.ui.generic.template, sap.ui.generic.app"
+		data-sap-ui-libs="sap.m, sap.ushell, sap.ui.core, sap.f, sap.ui.comp, sap.ui.table, sap.suite.ui.generic.template, sap.ui.generic.app, sap.ui.fl"
 		data-sap-ui-theme="sap_fiori_3"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-flexibilityServices='[{"applyConnector":"nbs/poc/ovp/ui/app/manage/oos/test/changes_loader", "custom":true}]'
@@ -70,6 +70,15 @@
 
 	<script type="text/javascript">
 		sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/ui/fl/FakeLrepConnectorLocalStorage"
+            ], function (FakeLrepConnectorLocalStorage) {
+                FakeLrepConnectorLocalStorage.enableFakeConnector(
+                    null,
+                    "my.teched.app00.MtOrderBrowser.Component",
+                    "1.0.0"
+                );
+            });
 			// initialize the ushell sandbox component
 			sap.ushell.Container.createRenderer().placeAt("content");
 		});
