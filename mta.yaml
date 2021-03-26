@@ -1,5 +1,5 @@
 _schema-version: "3.2"
-ID: nbs-poc-ovp-ui-app
+ID: nbs- poc-ovp-ui-app
 version: 0.0.1
 modules:
 - name: nbs-poc-ovp-ui-app-destination-content
@@ -238,7 +238,7 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-- name: nbspocovpuiappmanageoos
+- name: nbspocovpuiappmanageo os
   type: html5
   path: manage.oos
   build-parameters:
