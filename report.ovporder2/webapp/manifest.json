@@ -53,7 +53,7 @@
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_OVP_ORDER",
-                    "action": "report",
+                    "action": "report2",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
                     "icon": "sap-icon://filter-analytics"
