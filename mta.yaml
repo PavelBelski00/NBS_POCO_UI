@@ -323,25 +323,6 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
-- name: ui5_flexibility_consumer_xsuaa
-  type: com.sap.xs.uaa-application
-  parameters:
-    config:
-      role-templates:
-      - description: UI5 Flexibility Key User Role
-        name: KeyUser
-        scope-references:
-        - uaa.user
-        - $XSAPPNAME.KEYUSER
-      scopes:
-      - description: UI5 Flexibility Key User Scope
-        name: $XSAPPNAME.KEYUSER
-    service: xsuaa
-- name: FLXtest
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: ui5-flexibility-keyuser
-    service-plan: keyuser
 - name: nbs-poc-ovp-ui-app-destination-service
   type: org.cloudfoundry.managed-service
   parameters:
