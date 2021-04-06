@@ -145,7 +145,6 @@
                 "preload": true
             }
         },
-
         "extends": {
             "extensions": {}
         },
@@ -196,7 +195,6 @@
                         }
                     }
                 },
-
                 "pages": {
                     "ObjectPage|AlpAlertWI": {
                         "entitySet": "AlpAlertWI",

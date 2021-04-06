@@ -114,6 +114,10 @@ modules:
       - nbspocovpuiappreportalpalertwi.zip
       name: nbspocovpuiappreportalpalertwi
       target-path: resources/
+    - artifacts:
+      - reportovporderglfilter.zip
+      name: reportovporderglfilter
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -287,6 +291,16 @@ modules:
 - name: nbspocovpuiappreportalpalertwi
   type: html5
   path: report.alpalertwi
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: reportovporderglfilter
+  type: html5
+  path: report.ovporderglfilter
   build-parameters:
     build-result: dist
     builder: custom
