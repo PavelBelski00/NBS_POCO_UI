@@ -1,5 +1,5 @@
 _schema-version: "3.2"
-ID: nbs- poc-ovp-ui-app
+ID: nbs-poc-ovp-ui-app
 version: 0.0.1
 modules:
 - name: nbs-poc-ovp-ui-app-destination-content
@@ -117,6 +117,10 @@ modules:
     - artifacts:
       - nbspocovpuiappreportalpalertwi.zip
       name: nbspocovpuiappreportalpalertwi
+      target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportovporder2.zip
+      name: nbspocovpuiappreportovporder2
       target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
@@ -238,7 +242,7 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-- name: nbspocovpuiappmanageo os
+- name: nbspocovpuiappmanageoos
   type: html5
   path: manage.oos
   build-parameters:
@@ -308,26 +312,36 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
+- name: nbspocovpuiappreportovporder2
+  type: html5
+  path: report.ovporder2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
 resources:
 - name: ui5_flexibility_consumer_xsuaa
   type: com.sap.xs.uaa-application
   parameters:
-    service: xsuaa
     config:
-      scopes:
-        - name: $XSAPPNAME.KEYUSER
-          description: UI5 Flexibility Key User Scope
       role-templates:
-        - name: KeyUser
-          description: UI5 Flexibility Key User Role
-          scope-references:
-            - uaa.user
-            - $XSAPPNAME.KEYUSER
+      - description: UI5 Flexibility Key User Role
+        name: KeyUser
+        scope-references:
+        - uaa.user
+        - $XSAPPNAME.KEYUSER
+      scopes:
+      - description: UI5 Flexibility Key User Scope
+        name: $XSAPPNAME.KEYUSER
+    service: xsuaa
 - name: FLXtest
-  parameters:
-    service-plan: keyuser
-    service: ui5-flexibility-keyuser
   type: org.cloudfoundry.managed-service
+  parameters:
+    service: ui5-flexibility-keyuser
+    service-plan: keyuser
 - name: nbs-poc-ovp-ui-app-destination-service
   type: org.cloudfoundry.managed-service
   parameters:

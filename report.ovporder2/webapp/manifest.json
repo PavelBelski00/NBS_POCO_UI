@@ -1,0 +1,321 @@
+{
+    "_version": "1.31.0",
+    "sap.app": {
+        "id": "nbs.poc.ovp.ui.app.report.ovporder2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "tags": {
+            "keywords": []
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZPOCO_UI_ORDER_OVP_2_O2/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "ZPOCO_UI_ORDER_OVP_2_O2_VAN",
+                        "annotation"
+                    ],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "ZPOCO_UI_ORDER_OVP_2_O2_VAN": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPOCO_UI_ORDER_OVP_2_O2_VAN',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/ZPOCO_UI_ORDER_OVP_2_O2_VAN.xml"
+                }
+            },
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            }
+        },
+        "offline": false,
+        "sourceTemplate": {
+            "id": "OVP.smartovptemplate",
+            "version": "1.41.1"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "nbs-poc-ovp-ui-app-report-ovporder2-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "NBS_POC_OVP_ORDER",
+                    "action": "report",
+                    "title": "{{AppTitle}}",
+                    "subTitle": "",
+                    "icon": ""
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "resources": {
+            "js": [],
+            "css": []
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.0",
+            "libs": {
+                "sap.ovp": {}
+            },
+            "components": {}
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties",
+                "preload": false
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "mainService": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultCountMode": "Inline"
+                }
+            }
+        },
+        "extends": {
+            "extensions": {}
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "analytical"
+    },
+    "sap.ovp": {
+        "globalFilterModel": "mainService",
+        "globalFilterEntityType": "GlobalFilterForOrderType",
+        "containerLayout": "resizable",
+        "enableLiveFilter": true,
+        "considerAnalyticalParameters": false,
+        "cards": {
+            "TherapyMaxQuantity": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Maximum for a sample of Therapies",
+                    "subtTitle": "",
+                    "entitySet": "CardsForOrder",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#TherapyMaxQuan",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvTherapyMaxQuan",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpTherapyMaxQuan",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                }
+            },
+            "TherapyL1L2": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Quantity of Therapies by Status",
+                    "resizable": true,
+                    "entitySet": "CardsForOrder",
+                    "tabs": [
+                        {
+                            "value": "L1 Status",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#QuantityByL1",
+                            "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvQuantityByL1",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpQuantityByL",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "L2 Status",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#QuantityByL2",
+                            "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvQuantityByL2",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpQuantityByL",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ]
+                }
+            },
+            "Alert": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Alerts",
+                    "entitySet": "CardsForOrder",
+                    "sortBy": "AlertCreationDate",
+                    "sortOrder": "descending",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvAlert",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#Alert",
+                    "defaultSpan": {
+                        "rows": 10,
+                        "cols": 3
+                    }
+                }
+            },
+            "AlertWI": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Work Items",
+                    "entitySet": "CardsForOrder",
+                    "sortBy": "AlertWICreationDate",
+                    "sortOrder": "descending",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvAlertWI",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#AlertWI",
+                    "defaultSpan": {
+                        "rows": 10,
+                        "cols": 3
+                    }
+                }
+            },
+            "ThByTyPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Therapy by types",
+                    "entitySet": "CardsForOrder",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ThByTyPeriods",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvThByTyPeriods",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpThByTyPeriods",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                }
+            },
+            "OOSDetPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Details",
+                    "entitySet": "CardsForOrder",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#OOSDetPeriods",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvOOSDetPeriods",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpOOSDetPeriods",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                }
+            },
+            "OOSDesrcPeriods": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "OOS Descriptions",
+                    "entitySet": "CardsForOrder",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#OOSDesrcPeriods",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvOOSDesrcPeriods",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpOOSDesrcPeriods",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                }
+            },
+            "TherapyDateQuantity": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.table",
+                "settings": {
+                    "title": "Therapy By Plant",
+                    "entitySet": "CardsForOrder",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvTherapyDateQuan",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#TherapyDateQuan",
+                    "defaultSpan": {
+                        "rows": 20,
+                        "cols": 3
+                    }
+                }
+            },
+            "CapacitySlotsPlantSum": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Plant Capacity",
+                    "entitySet": "CardsForCapacity",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CardCapacitySlotsPlantSum",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvCardCapacitySlotsPlantSum",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpConsumedSlotsCount",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                }
+            },
+            "CardCapacitySlotsDateSum": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Capacity Data",
+                    "entitySet": "CardsForCapacity",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#CardCapacitySlotsDateSum",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvCardCapacitySlotsDateSum",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpConsumedSlotsCount",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                }
+            },
+            "Slots": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Slots",
+                    "resizable": true,
+                    "entitySet": "CardsForCapacity",
+                    "tabs": [
+                        {
+                            "value": "Available Slots",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#AvailableSlots",
+                            "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvAvailableSlots",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpAvailableSlt",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        },
+                        {
+                            "value": "Consumed Slots",
+                            "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#ConsumedSlots",
+                            "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvConsumedSlots",
+                            "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpConsumedSlt",
+                            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification"
+                        }
+                    ]
+                }
+            }
+        },
+        "filterSettings": {
+            "dateSettings": {
+                "useDateRange": true,
+                "exclude": false,
+                "selectedValues": ""
+            }
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "nbspocovpuiapprouter"
+    },
+    "sap.ui.generic.app": {
+        "settings": {}
+    }
+}

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zpoco_ui_order_ovp_2" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_DraftAdministrativeDataType" sap:label="Draft Administration Data" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Draft (Technical ID)"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Draft Entity ID"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription" sap:label="Draft Created By"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription" sap:label="Draft Last Changed By"/>
+                <Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Draft Access Type"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft In Process Since"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription" sap:label="Draft In Process By"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Is Kept By User"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Locked Since"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Created By Me"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Last Changed By Me"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft In Process By Me"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Created By (Description)"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Last Changed By (Description)"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft In Process By (Description)"/>
+            </EntityType>
+            <EntityType Name="GlobalFilterForOrderType" sap:label="Order Global Filter for OVP" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OrderUuid"/>
+                </Key>
+                <Property Name="OrderUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="NvsId" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="NVS ID"/>
+                <Property Name="Therapy" Type="Edm.String" MaxLength="50" sap:label="Therapy" sap:value-list="standard"/>
+                <Property Name="MfgPlantId" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName" sap:label="Plant ID" sap:value-list="standard"/>
+                <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
+                <Property Name="TtypeId" Type="Edm.String" MaxLength="10" sap:text="TherapyTypeName" sap:label="Therapy Type ID" sap:value-list="standard"/>
+                <Property Name="TherapyTypeName" Type="Edm.String" MaxLength="10" sap:label="Therapy Type Name"/>
+                <Property Name="Day0" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Day 0"/>
+                <Property Name="Stsl1Id" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Status L1 ID" sap:value-list="standard"/>
+                <Property Name="StatusL1Name" Type="Edm.String" MaxLength="30" sap:label="Status L1 Name"/>
+                <Property Name="Stsl2Id" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Status L2 ID" sap:value-list="standard"/>
+                <Property Name="AlertUpdatedDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Alerts Creation Date"/>
+                <Property Name="AlertWIUpdatedDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Tasks Creation Date"/>
+            </EntityType>
+            <EntityType Name="CardsForOrderType" sap:semantics="aggregate" sap:label="OVP Cards for Order" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderUuid" Type="Edm.Guid" sap:aggregation-role="dimension" sap:label="UUID"/>
+                <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="MFG Plant Name"/>
+                <Property Name="TherapyCount2" Type="Edm.Byte" sap:aggregation-role="measure" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="zpoco_c_therapy_vhType" sap:label="Therapy Value Help" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Therapy"/>
+                </Key>
+                <Property Name="Therapy" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Therapy"/>
+            </EntityType>
+            <EntityType Name="zpoco_i_plantType" sap:label="Manufacturing Plant" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MfgPlantId"/>
+                </Key>
+                <Property Name="MfgPlantId" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant ID"/>
+                <Property Name="PlantId" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PlantName" Type="Edm.String" MaxLength="20" sap:label="MFG Plant Name"/>
+                <Property Name="PlantImage" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Plant Image"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="zpoco_i_stsl1Type" sap:label="Status L1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="StatusL1Id"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="StatusL1Id" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Status L1 ID"/>
+                <Property Name="StatusL1Name" Type="Edm.String" MaxLength="30" sap:label="Status L1 Name"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="cds_zpoco_ui_order_ovp_2.assoc_AC147436ED449DBDB6A6484BEEA49C22" FromRole="FromRole_assoc_AC147436ED449DBDB6A6484BEEA49C22" ToRole="ToRole_assoc_AC147436ED449DBDB6A6484BEEA49C22"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="cds_zpoco_ui_order_ovp_2.assoc_AADAB7382FD038D4A34C2F9B447EA7BE" FromRole="FromRole_assoc_AADAB7382FD038D4A34C2F9B447EA7BE" ToRole="ToRole_assoc_AADAB7382FD038D4A34C2F9B447EA7BE"/>
+            </EntityType>
+            <EntityType Name="zpoco_i_stsl2Type" sap:label="Status L2" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="StatusL2Id"/>
+                </Key>
+                <Property Name="StatusL2Id" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Status L2 ID"/>
+                <Property Name="StatusL2Name" Type="Edm.String" MaxLength="30" sap:label="Status L2 Name"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="zpoco_i_ttypeType" sap:label="Manufacturing Plant" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TherapyTypeId"/>
+                </Key>
+                <Property Name="TherapyTypeId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Therapy Type ID"/>
+                <Property Name="TherapyTypeName" Type="Edm.String" MaxLength="10" sap:label="Therapy Type Name"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed At" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <ComplexType Name="DummyFunctionImportResult">
+                <Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/>
+            </ComplexType>
+            <Association Name="assoc_AADAB7382FD038D4A34C2F9B447EA7BE" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" Multiplicity="1" Role="FromRole_assoc_AADAB7382FD038D4A34C2F9B447EA7BE"/>
+                <End Type="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" Multiplicity="0..1" Role="ToRole_assoc_AADAB7382FD038D4A34C2F9B447EA7BE"/>
+            </Association>
+            <Association Name="assoc_AC147436ED449DBDB6A6484BEEA49C22" sap:content-version="1">
+                <End Type="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" Multiplicity="1" Role="FromRole_assoc_AC147436ED449DBDB6A6484BEEA49C22"/>
+                <End Type="cds_zpoco_ui_order_ovp_2.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_AC147436ED449DBDB6A6484BEEA49C22"/>
+            </Association>
+            <EntityContainer Name="cds_zpoco_ui_order_ovp_2_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="cds_zpoco_ui_order_ovp_2.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="GlobalFilterForOrder" EntityType="cds_zpoco_ui_order_ovp_2.GlobalFilterForOrderType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="CardsForOrder" EntityType="cds_zpoco_ui_order_ovp_2.CardsForOrderType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="zpoco_c_therapy_vh" EntityType="cds_zpoco_ui_order_ovp_2.zpoco_c_therapy_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="zpoco_i_plant" EntityType="cds_zpoco_ui_order_ovp_2.zpoco_i_plantType" sap:content-version="1"/>
+                <EntitySet Name="zpoco_i_stsl1" EntityType="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" sap:content-version="1"/>
+                <EntitySet Name="zpoco_i_stsl2" EntityType="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl2Type" sap:content-version="1"/>
+                <EntitySet Name="zpoco_i_ttype" EntityType="cds_zpoco_ui_order_ovp_2.zpoco_i_ttypeType" sap:content-version="1"/>
+                <AssociationSet Name="assoc_AADAB7382FD038D4A34C2F9B447EA7BE" Association="cds_zpoco_ui_order_ovp_2.assoc_AADAB7382FD038D4A34C2F9B447EA7BE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="zpoco_i_stsl1" Role="FromRole_assoc_AADAB7382FD038D4A34C2F9B447EA7BE"/>
+                    <End EntitySet="zpoco_i_stsl1" Role="ToRole_assoc_AADAB7382FD038D4A34C2F9B447EA7BE"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_AC147436ED449DBDB6A6484BEEA49C22" Association="cds_zpoco_ui_order_ovp_2.assoc_AC147436ED449DBDB6A6484BEEA49C22" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="zpoco_i_stsl1" Role="FromRole_assoc_AC147436ED449DBDB6A6484BEEA49C22"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_AC147436ED449DBDB6A6484BEEA49C22"/>
+                </AssociationSet>
+                <FunctionImport Name="zpoco_i_stsl1Activate" ReturnType="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" EntitySet="zpoco_i_stsl1" m:HttpMethod="POST" sap:action-for="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type">
+                    <Parameter Name="StatusL1Id" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="zpoco_i_stsl1Discard" ReturnType="cds_zpoco_ui_order_ovp_2.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type">
+                    <Parameter Name="StatusL1Id" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="zpoco_i_stsl1Edit" ReturnType="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" EntitySet="zpoco_i_stsl1" m:HttpMethod="POST" sap:action-for="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type" sap:applicable-path="Edit_ac">
+                    <Parameter Name="StatusL1Id" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="zpoco_i_stsl1Prepare" ReturnType="cds_zpoco_ui_order_ovp_2.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl1Type">
+                    <Parameter Name="StatusL1Id" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_stsl1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="ActivationAction" String="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_stsl1Activate"/>
+                        <PropertyValue Property="DiscardAction" String="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_stsl1Discard"/>
+                        <PropertyValue Property="EditAction" String="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_stsl1Edit"/>
+                        <PropertyValue Property="PreparationAction" String="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_stsl1Prepare"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Edit_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.GlobalFilterForOrderType/Therapy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Therapy"/>
+                        <PropertyValue Property="CollectionPath" String="zpoco_c_therapy_vh"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Therapy"/>
+                                    <PropertyValue Property="ValueListProperty" String="Therapy"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.GlobalFilterForOrderType/MfgPlantId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Plant ID"/>
+                        <PropertyValue Property="CollectionPath" String="zpoco_i_plant"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="MfgPlantId"/>
+                                    <PropertyValue Property="ValueListProperty" String="MfgPlantId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String=""/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantImage"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PlantName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.GlobalFilterForOrderType/TtypeId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Therapy Type ID"/>
+                        <PropertyValue Property="CollectionPath" String="zpoco_i_ttype"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="TtypeId"/>
+                                    <PropertyValue Property="ValueListProperty" String="TherapyTypeId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String=""/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="TherapyTypeName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.GlobalFilterForOrderType/Stsl1Id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Status L1 ID"/>
+                        <PropertyValue Property="CollectionPath" String="zpoco_i_stsl1"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Stsl1Id"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL1Id"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String=""/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StatusL1Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.GlobalFilterForOrderType/Stsl2Id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Status L2 ID"/>
+                        <PropertyValue Property="CollectionPath" String="zpoco_i_stsl2"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Stsl2Id"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusL2Id"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String=""/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreatedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedAt"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="LastChangedBy"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StatusL2Name"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.zpoco_i_plantType/MfgPlantId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.zpoco_i_stsl2Type/StatusL2Id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.zpoco_i_ttypeType/TherapyTypeId" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/CardsForOrder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>TherapyCount2</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/GlobalFilterForOrder" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Day0"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="AlertUpdatedDate"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="AlertWIUpdatedDate"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_plant" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_stsl2" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities/zpoco_i_ttype" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.CardsForOrderType/TherapyCount2" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_order_ovp_2.cds_zpoco_ui_order_ovp_2_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ORDER_OVP_2_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_ORDER_OVP_2_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
