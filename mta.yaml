@@ -122,6 +122,14 @@ modules:
       - nbspocovpuiappreportovporder2.zip
       name: nbspocovpuiappreportovporder2
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportalpoperations.zip
+      name: nbspocovpuiappreportalpoperations
+      target-path: resources/
+    - artifacts:
+      - Operationsreportalpoperations.zip
+      name: Operationsreportalpoperations
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -315,6 +323,26 @@ modules:
 - name: nbspocovpuiappreportovporder2
   type: html5
   path: report.ovporder2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportalpoperations
+  type: html5
+  path: report.alpoperations
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: Operationsreportalpoperations
+  type: html5
+  path: report.alpoperations
   build-parameters:
     build-result: dist
     builder: custom
