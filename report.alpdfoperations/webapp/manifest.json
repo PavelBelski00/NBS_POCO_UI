@@ -56,7 +56,7 @@
                     "action": "report",
                     "title": "{{AppTitle}}",
                     "subTitle": "{{AppDescription}}",
-                    "icon": ""
+                    "icon": "sap-icon://filter-analytics"
                 }
             }
         }
