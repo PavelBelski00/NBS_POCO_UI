@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zpoco_ui_df_operations" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="OperationsType" sap:semantics="aggregate" sap:label="DF" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TaskId" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:display-format="NonNegative" sap:label="Task ID"/>
+                <Property Name="SalesOrderId" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:display-format="NonNegative" sap:label="SO Number"/>
+                <Property Name="ServiceType" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="Service Type"/>
+                <Property Name="TicketOwner" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:label="Ticket Owner"/>
+                <Property Name="TaskCreationDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Task Creation Date"/>
+                <Property Name="TaskDueDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Due Date"/>
+                <Property Name="LastChangeDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:label="Last Change Date"/>
+                <Property Name="TaskDescription" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Task Description"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Created By"/>
+                <Property Name="Vendorquotetime" Type="Edm.Decimal" Precision="15" Scale="2" sap:aggregation-role="measure" sap:label="Vendor Quote Time" sap:filterable="false"/>
+                <Property Name="VendorquotetimeUom" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Quantity UOM" sap:quickinfo="Material Quantity Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="StatusText" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Status Text"/>
+                <Property Name="SoMultCategory1" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="SO Mult.Categ_1" sap:quickinfo="SO_Mult.Categ_1"/>
+                <Property Name="SapRefNum" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="SAP Ref.#(WBS or IO)" sap:quickinfo="SAP Ref.# (WBS or IO)"/>
+                <Property Name="SupportTeam" Type="Edm.String" MaxLength="100" sap:aggregation-role="dimension" sap:label="Support Team"/>
+                <Property Name="SystemId" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="System ID"/>
+                <Property Name="SubStatusText" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="Sub Status Text"/>
+                <Property Name="SupportTeamId" Type="Edm.String" MaxLength="7" sap:aggregation-role="dimension" sap:display-format="NonNegative" sap:label="Support Team ID"/>
+                <Property Name="ReportedBy" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:label="Reported By"/>
+                <Property Name="SoStatusText" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="SO Status Text"/>
+                <Property Name="SoReleaseClassification" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:label="SO R.Classification" sap:quickinfo="SO Release Classification"/>
+                <Property Name="ProductId" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:label="Product ID"/>
+                <Property Name="SoSupportTeam" Type="Edm.String" MaxLength="100" sap:aggregation-role="dimension" sap:label="SO Support Team"/>
+                <Property Name="SoMultCategory2" Type="Edm.String" MaxLength="50" sap:aggregation-role="dimension" sap:label="SO Mult.Categ_2" sap:quickinfo="SO_Mult.Categ_2"/>
+                <Property Name="TotalDays" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Total Days" sap:filterable="false"/>
+                <Property Name="DaysInCurrentStatus" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Days in Curr Status" sap:quickinfo="Days in Current Status" sap:filterable="false"/>
+                <Property Name="DaysInOpenStatus" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Days In Open Status" sap:filterable="false"/>
+                <Property Name="DaysInProgress" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Days In Progress" sap:filterable="false"/>
+                <Property Name="TotalDaysInClarification" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Total Days In Clarif" sap:quickinfo="Total Days In Clarification" sap:filterable="false"/>
+                <Property Name="TimesInClarification" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Times In Clarif" sap:quickinfo="Times In Clarification" sap:filterable="false"/>
+                <Property Name="DaysInEffortEstimation" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Days In Effort Estim" sap:quickinfo="Days In Effort Estimation" sap:filterable="false"/>
+                <Property Name="TotalDaysInDevevelopment" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Total Days In Dev" sap:quickinfo="Total Days In Development" sap:filterable="false"/>
+                <Property Name="TimesInDevelopment" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Times In Development" sap:filterable="false"/>
+                <Property Name="DaysInReview" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Days In Review" sap:filterable="false"/>
+                <Property Name="TotalDaysInScreening" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Total Days In Screen" sap:quickinfo="Total Days In Screening" sap:filterable="false"/>
+                <Property Name="TotalDaysInTesting" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Total Days In Test" sap:quickinfo="Total Days In Testing" sap:filterable="false"/>
+                <Property Name="Priority" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:label="Priority"/>
+                <Property Name="TimesDueDateChanges" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Times (Date Changes)" sap:quickinfo="Times Due Date Changes" sap:filterable="false"/>
+                <Property Name="DaysInCurrentSubStatus" Type="Edm.Int16" sap:aggregation-role="measure" sap:label="Days-Curr Sub Status" sap:quickinfo="Days in Current Sub Status" sap:filterable="false"/>
+                <Property Name="CoordinationTime" Type="Edm.Decimal" Precision="5" Scale="2" sap:aggregation-role="measure" sap:label="Coordination Time" sap:filterable="false"/>
+                <Property Name="SolutionDeliveryTime" Type="Edm.Decimal" Precision="5" Scale="2" sap:aggregation-role="measure" sap:label="Solution Deliv.Time" sap:quickinfo="Solution Delivery Time" sap:filterable="false"/>
+                <Property Name="ProposedDevEffort" Type="Edm.Decimal" Precision="5" Scale="2" sap:aggregation-role="measure" sap:label="Proposed Dev Effort" sap:quickinfo="Proposed Development Effort" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="cds_zpoco_ui_df_operations_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Operations" EntityType="cds_zpoco_ui_df_operations.OperationsType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="cds_zpoco_ui_df_operations.cds_zpoco_ui_df_operations_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_df_operations.cds_zpoco_ui_df_operations_Entities/Operations" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>Vendorquotetime</PropertyPath>
+                                <PropertyPath>TotalDays</PropertyPath>
+                                <PropertyPath>DaysInCurrentStatus</PropertyPath>
+                                <PropertyPath>DaysInOpenStatus</PropertyPath>
+                                <PropertyPath>DaysInProgress</PropertyPath>
+                                <PropertyPath>TotalDaysInClarification</PropertyPath>
+                                <PropertyPath>TimesInClarification</PropertyPath>
+                                <PropertyPath>DaysInEffortEstimation</PropertyPath>
+                                <PropertyPath>TotalDaysInDevevelopment</PropertyPath>
+                                <PropertyPath>TimesInDevelopment</PropertyPath>
+                                <PropertyPath>DaysInReview</PropertyPath>
+                                <PropertyPath>TotalDaysInScreening</PropertyPath>
+                                <PropertyPath>TotalDaysInTesting</PropertyPath>
+                                <PropertyPath>TimesDueDateChanges</PropertyPath>
+                                <PropertyPath>DaysInCurrentSubStatus</PropertyPath>
+                                <PropertyPath>CoordinationTime</PropertyPath>
+                                <PropertyPath>SolutionDeliveryTime</PropertyPath>
+                                <PropertyPath>ProposedDevEffort</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/Vendorquotetime" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TotalDays" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/DaysInCurrentStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/DaysInOpenStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/DaysInProgress" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TotalDaysInClarification" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TimesInClarification" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/DaysInEffortEstimation" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TotalDaysInDevevelopment" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TimesInDevelopment" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/DaysInReview" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TotalDaysInScreening" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TotalDaysInTesting" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TimesDueDateChanges" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/DaysInCurrentSubStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/CoordinationTime" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/SolutionDeliveryTime" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/ProposedDevEffort" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpoco_ui_df_operations.cds_zpoco_ui_df_operations_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../iwbep/common;v=0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../iwbep/common;v=0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_DF_OPERATIONS_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_DF_OPERATIONS_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

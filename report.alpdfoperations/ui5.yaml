@@ -1,20 +1,8 @@
-specVersion: '2.0'
+specVersion: '1.0'
 metadata:
-  name: 'report.alpoperations'
+  name: 'report.alpdfoperations'
 type: application
-framework:
-  name: SAPUI5
-  version: '1.91.0'
-  libraries: 
-    - name: sap.m
-    - name: sap.ushell
-    - name: sap.ui.core
-    - name: sap.f
-    - name: sap.ui.comp
-    - name: sap.ui.table
-    - name: sap.suite.ui.generic.template
-    - name: sap.ui.generic.app
-    - name: themelib_sap_fiori_3
+ui5Theme: sap_fiori_3
 server:
   customMiddleware:
   - name: fiori-tools-proxy
@@ -26,6 +14,12 @@ server:
         url: https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com
         scp: true
         destination: abap-cloud-rap_tst
+      ui5:
+        path: 
+        - /resources
+        - /test-resources
+        url: https://ui5.sap.com
+        version:  # The UI5 version, for instance, 1.78.1. Empty means latest version
   - name: fiori-tools-appreload
     afterMiddleware: compression
     configuration:

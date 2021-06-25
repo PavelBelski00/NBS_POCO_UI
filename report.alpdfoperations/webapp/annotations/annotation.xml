@@ -1,0 +1,82 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/sap/ZPOCO_UI_DF_OPERATIONS_O2/$metadata">
+        <edmx:Include Namespace="cds_zpoco_ui_df_operations"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="nbs.poc.ovp.ui.app">
+        <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/TicketOwner">
+            <Annotation Term="Common.ValueList" Qualifier="FilterByVendorQuoteTime">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Operations"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterByVendorQuoteTime"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="TicketOwner"/>
+                                    <PropertyValue Property="ValueListProperty" String="TicketOwner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+            </Annotation>
+        </Annotations>
+        <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/SoMultCategory1">
+            <Annotation Term="Common.ValueList" Qualifier="FilterSOMultCat1ByTotalDays">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Operations"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterSOMultCat1ByTotalDays"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SoMultCategory1"/>
+                                    <PropertyValue Property="ValueListProperty" String="SoMultCategory1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+            </Annotation>
+        </Annotations>
+        <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/SoMultCategory2">
+            <Annotation Term="Common.ValueList" Qualifier="FilterSOMultCat2ByTotalDays">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Operations"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterSOMultCat2ByTotalDays"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SoMultCategory2"/>
+                                    <PropertyValue Property="ValueListProperty" String="SoMultCategory2"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+            </Annotation>
+        </Annotations>
+        <Annotations Target="cds_zpoco_ui_df_operations.OperationsType/Priority">
+            <Annotation Term="Common.ValueList" Qualifier="FilterTotalDaysByPriority">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Operations"/>
+                        <PropertyValue Property="PresentationVariantQualifier" String="pvFilterTotalDaysByPriority"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Priority"/>
+                                    <PropertyValue Property="ValueListProperty" String="Priority"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+            </Annotation>
+        </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
