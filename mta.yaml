@@ -126,6 +126,10 @@ modules:
       - nbspocovpuiappreportalpdfoperations.zip
       name: nbspocovpuiappreportalpdfoperations
       target-path: resources/
+    - artifacts:
+      - nbspocovpuiappreportovpdfoperations.zip
+      name: nbspocovpuiappreportovpdfoperations
+      target-path: resources/
 - name: nbspocovpuiappmanagecapacity
   type: html5
   path: manage.capacity
@@ -329,6 +333,16 @@ modules:
 - name: nbspocovpuiappreportalpdfoperations
   type: html5
   path: report.alpdfoperations
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: nbspocovpuiappreportovpdfoperations
+  type: html5
+  path: report.ovpdfoperations
   build-parameters:
     build-result: dist
     builder: custom
