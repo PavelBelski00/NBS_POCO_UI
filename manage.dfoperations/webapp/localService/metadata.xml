@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zpoco_ui_df_operation_lr" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="DFOperationsType" sap:label="List Report: DF Operations" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TaskId"/>
+                </Key>
+                <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TaskId" Type="Edm.String" Nullable="false" MaxLength="15" sap:display-format="NonNegative" sap:label="Task ID"/>
+                <Property Name="SoId" Type="Edm.String" MaxLength="15" sap:display-format="NonNegative" sap:label="SO Number"/>
+                <Property Name="ServiceType" Type="Edm.String" MaxLength="20" sap:label="Service Type"/>
+                <Property Name="TicketOwner" Type="Edm.String" MaxLength="15" sap:label="Ticket Owner"/>
+                <Property Name="TaskCrDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Task Creation Date"/>
+                <Property Name="TaskDueDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Due Date"/>
+                <Property Name="LastChangeDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Last Change Date"/>
+                <Property Name="TaskDescr" Type="Edm.String" MaxLength="30" sap:label="Task Description"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"/>
+                <Property Name="Vendorquotetime" Type="Edm.Decimal" Precision="15" Scale="2" sap:label="Vendor Quote Time"/>
+                <Property Name="VendorquotetimeUom" Type="Edm.String" MaxLength="3" sap:label="Quantity UOM" sap:quickinfo="Material Quantity Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="StatusText" Type="Edm.String" MaxLength="30" sap:label="Status Text"/>
+                <Property Name="SoMultCategory1" Type="Edm.String" MaxLength="50" sap:label="SO Mult.Categ_1" sap:quickinfo="SO_Mult.Categ_1"/>
+                <Property Name="SapRefNum" Type="Edm.String" MaxLength="50" sap:label="SAP Ref.#(WBS or IO)" sap:quickinfo="SAP Ref.# (WBS or IO)"/>
+                <Property Name="SupportTeam" Type="Edm.String" MaxLength="100" sap:label="Support Team"/>
+                <Property Name="SystemId" Type="Edm.String" MaxLength="3" sap:label="System ID"/>
+                <Property Name="SubStatusText" Type="Edm.String" MaxLength="30" sap:label="Sub Status Text"/>
+                <Property Name="SupportTeamId" Type="Edm.String" MaxLength="7" sap:display-format="NonNegative" sap:label="Support Team ID"/>
+                <Property Name="ReportedBy" Type="Edm.String" MaxLength="12" sap:label="Reported By"/>
+                <Property Name="SoStatusText" Type="Edm.String" MaxLength="30" sap:label="SO Status Text"/>
+                <Property Name="SoRelClassification" Type="Edm.String" MaxLength="30" sap:label="SO R.Classification" sap:quickinfo="SO Release Classification"/>
+                <Property Name="ProductId" Type="Edm.String" MaxLength="10" sap:label="Product ID"/>
+                <Property Name="SoSupportTeam" Type="Edm.String" MaxLength="100" sap:label="SO Support Team"/>
+                <Property Name="SoMultCategory2" Type="Edm.String" MaxLength="50" sap:label="SO Mult.Categ_2" sap:quickinfo="SO_Mult.Categ_2"/>
+                <Property Name="TotalDays" Type="Edm.Int16" sap:label="Total Days"/>
+                <Property Name="DaysInCurrStatus" Type="Edm.Int16" sap:label="Days in Curr Status" sap:quickinfo="Days in Current Status"/>
+                <Property Name="DaysInOpenStatus" Type="Edm.Int16" sap:label="Days In Open Status"/>
+                <Property Name="DaysInProgress" Type="Edm.Int16" sap:label="Days In Progress"/>
+                <Property Name="TotalDaysInClarif" Type="Edm.Int16" sap:label="Total Days In Clarif" sap:quickinfo="Total Days In Clarification"/>
+                <Property Name="TimesInClarif" Type="Edm.Int16" sap:label="Times In Clarif" sap:quickinfo="Times In Clarification"/>
+                <Property Name="DaysInEffortEstim" Type="Edm.Int16" sap:label="Days In Effort Estim" sap:quickinfo="Days In Effort Estimation"/>
+                <Property Name="TotalDaysInDev" Type="Edm.Int16" sap:label="Total Days In Dev" sap:quickinfo="Total Days In Development"/>
+                <Property Name="TimesInDev" Type="Edm.Int16" sap:label="Times In Development"/>
+                <Property Name="DaysInReview" Type="Edm.Int16" sap:label="Days In Review"/>
+                <Property Name="TotalDaysInScreen" Type="Edm.Int16" sap:label="Total Days In Screen" sap:quickinfo="Total Days In Screening"/>
+                <Property Name="TotalDaysInTest" Type="Edm.Int16" sap:label="Total Days In Test" sap:quickinfo="Total Days In Testing"/>
+                <Property Name="Priority" Type="Edm.String" MaxLength="15" sap:label="Priority"/>
+                <Property Name="TimesDueDateChanges" Type="Edm.Int16" sap:label="Times (Date Changes)" sap:quickinfo="Times Due Date Changes"/>
+                <Property Name="DaysInCurrSubStatus" Type="Edm.Int16" sap:label="Days-Curr Sub Status" sap:quickinfo="Days in Current Sub Status"/>
+                <Property Name="CoordinationTime" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="Coordination Time"/>
+                <Property Name="SolutionDeliveryTime" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="Solution Deliv.Time" sap:quickinfo="Solution Delivery Time"/>
+                <Property Name="ProposedDevEffort" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="Proposed Dev Effort" sap:quickinfo="Proposed Development Effort"/>
+            </EntityType>
+            <EntityContainer Name="cds_zpoco_ui_df_operation_lr_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="DFOperations" EntityType="cds_zpoco_ui_df_operation_lr.DFOperationsType" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
+            </EntityContainer>
+            <Annotations Target="cds_zpoco_ui_df_operation_lr.cds_zpoco_ui_df_operation_lr_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_df_operation_lr.cds_zpoco_ui_df_operation_lr_Entities/DFOperations" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Delete_mc</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Delete_mc</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpoco_ui_df_operation_lr.cds_zpoco_ui_df_operation_lr_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../iwbep/common;v=0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../iwbep/common;v=0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_DF_OPERAT_LR_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://b1ed4af1-ae92-4699-bcd2-fac430457046.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZPOCO_UI_DF_OPERAT_LR_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
