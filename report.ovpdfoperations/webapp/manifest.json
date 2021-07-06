@@ -159,6 +159,16 @@
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvMAXVendTimebyTicketOwner",
                     "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#MAXVendTimebyTicketOwner"
                 }
+            },
+            "CardSUMVendorQuoteTimeByCategory": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Vendor Quote Time by Category",
+                    "entitySet": "DFOperationsOVP",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvSUMVendorQuoteTimeByCategory",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#SUMVendorQuoteTimeByCategory"
+                }
             }
         },
         "chartSettings": {
