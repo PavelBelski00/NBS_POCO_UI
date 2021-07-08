@@ -167,7 +167,8 @@
                     "title": "Vendor Quote Time by Category",
                     "entitySet": "DFOperationsOVP",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvSUMVendorQuoteTimeByCategory",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#SUMVendorQuoteTimeByCategory"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#SUMVendorQuoteTimeByCategory",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpVendorquotetimeSum"
                 }
             }
         },
