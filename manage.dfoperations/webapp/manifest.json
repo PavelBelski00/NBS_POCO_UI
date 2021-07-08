@@ -52,7 +52,7 @@
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "NBS_POC_DF_OPERATIONS",
+                    "semanticObject": "NBS_POC_DF_OPERATIONS", 
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
