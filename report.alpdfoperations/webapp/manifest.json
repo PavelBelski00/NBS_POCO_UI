@@ -53,7 +53,7 @@
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_DF_OPERATIONS",
-                    "action": "report",
+                    "action": "alpreport",
                     "title": "{{AppTitle}}",
                     "subTitle": "{{AppDescription}}",
                     "icon": "sap-icon://filter-analytics"

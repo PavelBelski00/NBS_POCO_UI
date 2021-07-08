@@ -53,7 +53,7 @@
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "NBS_POC_DF_OPERATIONS",
-                    "action": "report",
+                    "action": "ovpreport",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
                     "icon": "sap-icon://factory"
