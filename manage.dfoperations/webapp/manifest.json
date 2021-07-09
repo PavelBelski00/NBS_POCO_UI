@@ -56,7 +56,12 @@
                     "action": "manage",
                     "title": "{{AppTitle}}",
                     "subTitle": "",
-                    "icon": ""
+                    "icon": "sap-icon://target-group",
+                    "indicatorDataSource": {
+                        "dataSource": "mainService",
+                        "path": "/dynamic_dest/abap-cloud-rap_tst/sap/opu/odata/sap/ZPOCO_UI_DF_OPERAT_LR_O2//DFOperations/$count",
+                        "refresh": 10
+                    }                    
                 }
             }
         }
