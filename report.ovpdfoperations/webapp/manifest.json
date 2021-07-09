@@ -134,10 +134,11 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.charts.analytical",
                 "settings": {
-                    "title": "Average Amount of Total Days by System ID",
+                    "title": "Vendor Quote Time by Category",
                     "entitySet": "DFOperationsOVP",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvAVTotalDaysBySystemId",
-                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#AVTotalDaysBySystemId"
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#AVTotalDaysBySystemId",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpVendorquotetimeSum"
                 }
             },
             "CardAVDaysInCuurStatus": {
